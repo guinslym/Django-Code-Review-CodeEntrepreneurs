@@ -1,10 +1,11 @@
 Steps:
- ☐ Choose the name of the project (codeforentrepreneurs)
- ☐ Create a django project Last version minus 2
- ☐ Set the project configuration for different environment
+ ✔ Choose the name of the project (codeforentrepreneurs) @done (17-07-19 01:07)
+ ✔ Create a django project Last version minus 2 @done (17-07-19 01:07)
+   ✔ choose django==1.11 @done (17-07-19 01:07)
+ ✔ Set the project configuration for different environment @done (17-07-19 01:07)
  ☐ Do a wireframe
  ☐ Create an ERD (Entity-relationship-diagram) of the Model
  ☐ Select which frontend framework to use
    ☐ Boostrap Material design
- ☐ Start the application
+ ✔ Start the application @done (17-07-19 01:07)
  ☐ Do a MVP test (TDD)
