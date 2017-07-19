@@ -11,3 +11,8 @@ Steps:
    ☐ Boostrap Material design
  ☐ Test the app (functionnal programming)
  ☐ Do a MVP test (TDD)
+
+
+helps:
+ ☐ https://github.com/ShareClass/ShareClass/blob/d204f7c80729bc024cd10bd527ff8667224c5ff3/shareclass/course/models.py
+ ☐ https://github.com/search?o=desc&q=language%3Apython++filename%3Amodels.py+course+django&s=indexed&type=Code&utf8=%E2%9C%93
