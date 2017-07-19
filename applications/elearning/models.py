@@ -63,3 +63,12 @@ class Comment(TimeStampedModel, models.Model):
         #ordering = ("?",)
         verbose_name = 'Commnent'
         verbose_name_plural = 'Comments'
+
+class UserProfile(TimeStampedModel, models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    nickname = models.CharField(max_length=50, blank=False)
+    bio = models.TextField(null=False, blank=False)
+    mobile = models.TextField(default='Your Mobile Phone Number')
+    address = models.TextField(default='Your Address', null=False, blank=False)
+    userpicture = models.ImageField(upload_to="my_profile/%Y/%m/%d", null=False, blank=False)
+    status = models.TextField(default="Great to have someone to lean on", null=False, blank=False)
