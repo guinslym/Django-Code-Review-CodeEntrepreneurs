@@ -1,0 +1,17 @@
+Application:
+ ☐ This application will help users to choose a course. A user will be able to View all the course, register to a course. A user can also see who in it's region take a course also.
+
+What do I want to learn:
+ ☐ 1. TDD with Django
+ ☐ 2. Multi-users access with different permissions
+ ☐ 3. Latitude-longitude location
+ ☐ 4. Comments
+ ☐ 5. Payments system (Paypal)
+ ☐ 6. Right way to setup a django project
+ ☐ 7. CBV
+ ☐ 8. Docker send email
+
+Scenario:
+ ☐ A User can see all the course available
+ ☐ To register to a course the user needs to be Authentificated
+ ☐ An Authenticated user can leave a comment
