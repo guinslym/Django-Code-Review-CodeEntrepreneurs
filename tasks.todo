@@ -1,4 +1,9 @@
 Steps:
  ☐ Create a django project Last version minus 2
  ☐ Set the project configuration for different environment
- ☐ 
+ ☐ Do a wireframe
+ ☐ Create an ERD (Entity-relationship-diagram) of the Model
+ ☐ Select which frontend framework to use
+   ☐ Boostrap Material design
+ ☐ Start the application
+ ☐ Do a MVP test (TDD)
