@@ -3,9 +3,11 @@ Steps:
  ✔ Create a django project Last version minus 2 @done (17-07-19 01:07)
    ✔ choose django==1.11 @done (17-07-19 01:07)
  ✔ Set the project configuration for different environment @done (17-07-19 01:07)
+ ✔ Create an ERD (Entity-relationship-diagram) of the Model @done (17-07-19 02:03)
+ ✔ Start the application @done (17-07-19 01:07)
+ ☐ Test the Models (have some issue there)
  ☐ Do a wireframe
- ☐ Create an ERD (Entity-relationship-diagram) of the Model
  ☐ Select which frontend framework to use
    ☐ Boostrap Material design
- ✔ Start the application @done (17-07-19 01:07)
+ ☐ Test the app (functionnal programming)
  ☐ Do a MVP test (TDD)
