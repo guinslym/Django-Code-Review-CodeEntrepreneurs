@@ -1,0 +1,35 @@
+-r base.txt
+backports.shutil-get-terminal-size==1.0.0
+coverage==4.1
+decorator==4.0.10
+ipdb==0.10.0
+ipython==4.2.0
+ipython-genutils==0.1.0
+pexpect==4.1.0
+pickleshare==0.7.2
+ptyprocess==0.5.1
+py==1.4.31
+pytest==2.9.2
+pytest-watch
+pytest-django==2.9.1
+simplegeneric==0.8.1
+traitlets==4.2.1
+mixer==5.5.7
+mock==2.0.0
+flake8
+django-seed==0.1.6
+
+#important
+#use this versions
+pytest-cov==2.1.0
+fake-factory==0.5.5
+
+
+django-debug-toolbar
+beautifulsoup4==4.5.3
+lxml==3.7.3
+numpy==1.12.1
+pandas==0.19.2
+selenium==3.4.0
+django-webpack-loader
+pytest-ordering==0.5

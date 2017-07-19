@@ -1,0 +1,17 @@
+django==1.10.7
+django-bootstrap-pagination==1.6.2
+django-filter==0.13.0
+django-extensions==1.6.1
+django-crispy-forms
+django-model-utils
+django-admin-honeypot
+django-braces
+Pillow
+whitenoise
+wget==3.2
+pytz
+timeago
+python-dateutil
+django-allauth
+django-vote==2.1.4
+django-friendship
