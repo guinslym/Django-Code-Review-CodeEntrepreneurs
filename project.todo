@@ -15,3 +15,7 @@ Scenario:
  ☐ A User can see all the course available
  ☐ To register to a course the user needs to be Authentificated
  ☐ An Authenticated user can leave a comment
+
+
+commands:
+ ☐ pip install django==1.11
