@@ -1,4 +1,4 @@
-django==1.10.7
+django==1.11
 django-bootstrap-pagination==1.6.2
 django-filter==0.13.0
 django-extensions==1.6.1
