@@ -10,7 +10,8 @@ Steps:
  ✔ Do a wireframe @done (17-07-23 07:08)
  ✔ Select which frontend framework to use @done (17-07-23 07:08)
    ✔ Boostrap Material design @done (17-07-23 07:08)
- ☐ Decide if I should do the template first
+ ✔ Decide if I should do the template first @done (17-07-23 08:38)
+ ☐ Continue with the Frontend (integration of the Wireframe) finish it. MVP
  ☐ Test the app (functionnal programming)
  ☐ Do a MVP test (TDD)
  ☐ Do a MVP (frontend) --- real basic
