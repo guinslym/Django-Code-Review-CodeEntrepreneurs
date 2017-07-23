@@ -40,6 +40,7 @@ from django.views.decorators.cache import cache_page
 #logging
 import logging
 logger = logging.getLogger(__name__)
+
 #models
 from applications.elearning.models import Course
 from applications.elearning.models import Register
@@ -47,6 +48,15 @@ from applications.elearning.models import Comment
 from applications.elearning.models import UserProfile
 from applications.elearning.models import Location
 from django.contrib.auth.models import User
+
+
+#Third-party
+#http://django-hitcount.readthedocs.io/en/latest/installation.html
+from hitcount.models import HitCount
+from hitcount.views import HitCountMixin
+#http://django-hitcount.readthedocs.io/en/latest/installation.html#hitcountdetailview
+from hitcount.views import HitCountDetailView
+from friendship.models import Friend, Follow
 
 #http://localhost:8001/
 class HomeView(generic.TemplateView):

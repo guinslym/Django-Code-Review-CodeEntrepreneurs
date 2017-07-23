@@ -18,10 +18,11 @@ from django.core.validators import MaxValueValidator
 
 #other package
 from vote.models import VoteModel
+from hitcount.models import HitCountMixin
 
 from utils.models_utils import TimeStampedModel
 
-class Course(TimeStampedModel, VoteModel, models.Model):
+class Course(TimeStampedModel, VoteModel, HitCountMixin, models.Model):
 	course_id = models.UUIDField(default=uuid.uuid4, editable=False)
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
 	picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
@@ -69,7 +70,7 @@ class Comment(TimeStampedModel, models.Model):
         verbose_name = 'Commnent'
         verbose_name_plural = 'Comments'
 
-class UserProfile(TimeStampedModel, models.Model):
+class UserProfile(TimeStampedModel, HitCountMixin, models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     nickname = models.CharField(max_length=50, blank=False)
     bio = models.TextField(null=False, blank=False)
