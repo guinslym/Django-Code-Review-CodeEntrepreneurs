@@ -2,6 +2,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import now
 
+#model_utils.models
+
 class AutoCreatedField(models.DateTimeField):
     """
     A DateTimeField that automatically populates itself at

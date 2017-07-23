@@ -14,7 +14,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator, RegexValidator
 from django.conf import settings
-from model_utils.models import TimeStampedModel
+from utils.models_utils import TimeStampedModel
 from django.core.validators import MaxValueValidator
 
 #other package
@@ -46,6 +46,17 @@ class Course(TimeStampedModel, models.Model):
 	    #ordering = ("?",)
 	    verbose_name = 'Course'
 	    verbose_name_plural = 'Courses'
+
+class Register(TimeStampedModel, models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    student = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
+    
+    class Meta:
+        ordering = ["-created"]
+        #ordering = ("?",)
+        verbose_name = 'Register'
+        verbose_name_plural = 'Registrations'
+
 
 
 class Comment(TimeStampedModel, models.Model):
