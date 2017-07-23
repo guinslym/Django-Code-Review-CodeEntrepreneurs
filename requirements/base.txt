@@ -16,3 +16,4 @@ django-allauth
 django-vote==2.1.4
 django-friendship
 django-flat-theme
+django-hitcount
