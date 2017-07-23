@@ -149,4 +149,12 @@ class TestRelationship(object):
         assert user2 in Follow.objects.followers(user1) 
         #List of who a user is following
         assert user1 in Follow.objects.following(user2)
+
+    def test_a_course_can_have_many_comments(self):
+        user = mixer.blend(User, username='nickelback')
+        course = mixer.blend(Course, student=user)
+        comments = mixer.cycle(12).blend(Comment, author=user, 
+            course=course, comment=mixer.sequence(lambda c: "test_%s" % c))
+        assert Comment.objects.filter(course=course).count() == 12
+        #TODO a user can post up to 4 comment to a course
         
