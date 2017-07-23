@@ -64,3 +64,7 @@ class HomeView(generic.TemplateView):
         context['msg'] = 'hello world'
 
         return context
+
+
+def robot_files(request, filename):
+    return render(request, 'emplois/'+filename, {}, content_type="text/plain")
