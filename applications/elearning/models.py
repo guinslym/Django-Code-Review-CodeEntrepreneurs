@@ -16,10 +16,10 @@ from django.core.validators import MinLengthValidator, RegexValidator
 from django.conf import settings
 from utils.models_utils import TimeStampedModel
 from django.core.validators import MaxValueValidator
-from vote.models import VoteModel
 
 #other package
-#from vote.models import VoteModel
+from vote.models import VoteModel
+
 
 class Course(TimeStampedModel, VoteModel, models.Model):
 	course_id = models.UUIDField(default=uuid.uuid4, editable=False)
