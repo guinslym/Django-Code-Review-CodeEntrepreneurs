@@ -10,7 +10,21 @@ from django.conf.urls.i18n import i18n_patterns
 from applications.elearning.views.views_crud import robot_files
 
 urlpatterns = [
-	url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
+	#Robot and Humans.txt
+	url(
+		r'^(?P<filename>(robots.txt)|(humans.txt))$', 
+			robot_files, name='home-files'
+		),
+	
+	#Main application
+    url(
+    	r'^elearning/', 
+    		include(
+    			'applications.elearning.urls', 
+    			namespace="elearning"
+    		)
+    	),
+    url(r'^', include('applications.elearning.urls')),
     
     #admin
     url(r'^admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
