@@ -16,11 +16,12 @@ from django.core.validators import MinLengthValidator, RegexValidator
 from django.conf import settings
 from utils.models_utils import TimeStampedModel
 from django.core.validators import MaxValueValidator
+from vote.models import VoteModel
 
 #other package
 #from vote.models import VoteModel
 
-class Course(TimeStampedModel, models.Model):
+class Course(TimeStampedModel, VoteModel, models.Model):
 	course_id = models.UUIDField(default=uuid.uuid4, editable=False)
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
 	picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
@@ -57,8 +58,6 @@ class Register(TimeStampedModel, models.Model):
         verbose_name = 'Register'
         verbose_name_plural = 'Registrations'
 
-
-
 class Comment(TimeStampedModel, models.Model):
     product = models.ForeignKey(Course, on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
@@ -78,3 +77,15 @@ class UserProfile(TimeStampedModel, models.Model):
     address = models.TextField(default='Your Address', null=False, blank=False)
     userpicture = models.ImageField(upload_to="my_profile/%Y/%m/%d", null=False, blank=False)
     status = models.TextField(default="Great to have someone to lean on", null=False, blank=False)
+
+
+class Location(TimeStampedModel, models.Model):
+    address =  models.OneToOneField(UserProfile, on_delete=models.CASCADE, related_name='gps')
+    latitude = models.CharField(max_length=40)
+    longitude = models.CharField(max_length=40)
+    
+    class Meta:
+        ordering = ["-created"]
+        #ordering = ("?",)
+        verbose_name = 'Location'
+        verbose_name_plural = 'Locations'
