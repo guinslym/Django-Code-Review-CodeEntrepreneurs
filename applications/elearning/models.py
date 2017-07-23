@@ -14,7 +14,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator, RegexValidator
 from django.conf import settings
-from utils.models_utils import TimeStampedModel
+from model_utils.models import StatusModel, TimeStampedModel
 from django.core.validators import MaxValueValidator
 
 #other package
@@ -28,8 +28,8 @@ class Course(TimeStampedModel, VoteModel, models.Model):
 	                        help_text='Image of the course',
 	                        null=False, blank=False, verbose_name="pics")
 	shortdesc = models.CharField(max_length=440, null=False, help_text='short description of the course', blank=False, verbose_name='shoutout')
-	slug = models.CharField(max_length=220, null=True, blank=True)
-	price = models.DecimalField(max_digits=16, decimal_places=2, default=0, null=True, blank=True)
+	slug = models.CharField(max_length=220)
+	price = models.DecimalField(max_digits=16, decimal_places=2, default=0)
 	number_of_minutes = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(60),])
 
 	def __str__(self):

@@ -11,10 +11,26 @@ pytestmark = pytest.mark.django_db
 
 #models
 from applications.elearning.models import Course
+from applications.elearning.models import Register
+from applications.elearning.models import Comment
+from applications.elearning.models import UserProfile
+from applications.elearning.models import Location
 from django.contrib.auth.models import User
 
 #url helper
 from django.core.urlresolvers import reverse, resolve
+
+
+class Course(TimeStampedModel, VoteModel, models.Model):
+    course_id = models.UUIDField(default=uuid.uuid4, editable=False)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
+    picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
+                            help_text='Image of the course',
+                            null=False, blank=False, verbose_name="pics")
+    shortdesc = models.CharField(max_length=440, null=False, help_text='short description of the course', blank=False, verbose_name='shoutout')
+    slug = models.CharField(max_length=220)
+    price = models.DecimalField(max_digits=16, decimal_places=2, default=0, null=True, blank=True)
+    number_of_minutes = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(60),])
 
 
 class TestCourse(TestCase):
@@ -29,25 +45,13 @@ class TestCourse(TestCase):
     def test_count_object(self):
         obj = mixer.cycle(10).blend('elearning.Course')
         assert Course.objects.all().count() == 10
-
-    def test_null_field(self):
-    	obj = mixer.blend('elearning.Course')
-    	assert isinstance(obj.slug, None.__class__)
-
-    def testfield_with_content(self):
-    	obj = mixer.blend('elearning.Course', activated=True)
-    	assert isinstance(obj.activated, bool)
-    
+   
     def test_attributes_of_models(self):
         obj = mixer.blend('elearning.Course')
         assert obj.author
         assert obj.photo
-        assert obj.showoff
-        assert obj.slug == None
-        assert obj.price == 0
-        assert obj.activated == False
-        assert obj.quantity == 0
-        assert obj.sale == False
+        assert obj.picture
+        # ...
 
     def test_relation_has_a_user(self):
         user = mixer.blend(User, username='nickelback')
