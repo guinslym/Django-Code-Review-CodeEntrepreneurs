@@ -3,13 +3,22 @@
 # Standard Python module
 from json import dumps, loads
 from datetime import datetime, timedelta, time
-
 import os
 
 #Django
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
+#https://docs.djangoproject.com/fr/1.11/ref/class-based-views/
+from django.views import View
+from django.views.generic.base import TemplateView
+from django.views.generic.base import RedirectView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
+from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
 from django.utils import timezone
 from django.core import serializers
 from django.core.urlresolvers import reverse
@@ -22,7 +31,8 @@ from django.shortcuts import get_object_or_404
 from django.core.paginator import (
 	Paginator, 
 	EmptyPage, 
-	PageNotAnInteger)
+	PageNotAnInteger
+	)
 #Task queues
 #cache
 from django.views.decorators.cache import cache_page
