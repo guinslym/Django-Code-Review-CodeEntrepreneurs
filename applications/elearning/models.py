@@ -59,7 +59,7 @@ class Register(TimeStampedModel, models.Model):
         verbose_name_plural = 'Registrations'
 
 class Comment(TimeStampedModel, models.Model):
-    product = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
     comment = models.CharField(max_length=500)
     
