@@ -114,12 +114,39 @@ ______     _       _   _                 _     _
 
 class TestRelationship(object):
     """TestRelationship"""
-    def test_user_can_LIKE_a_course(self):
-        assert True 
+    def test_an_user_can_LIKE_a_course(self):
+        user = mixer.blend(User, username='nickelback')
+        course = mixer.blend('elearning.Course', author=user)
+        course.votes.up(user.id)
+        assert course.votes.count() == 1
 
-    def test_user_can_REGISTER_to_a_course(self):
-        assert True 
+    def test_an_user_can_REGISTER_to_a_course(self):
+        user = mixer.blend(User, username='nickelback')
+        course = mixer.blend('elearning.Course', author=user)
+        registered = mixer.blend('elearning.Register',
+                         student=user, course=course)
+        assert registered.student.username == 'nickelback'
+
+        users = mixer.cycle(10).blend(User, username=mixer.sequence(lambda c: "nickelback_%s" % c))
+        
+        #registrering 10 users into a course
+        for this_user in users:
+            registered = mixer.blend('elearning.Register',
+                student=this_user, course=course)
+        
+        #how many Student this Course contains
+        assert  Register.objects.filter(course= course.id).count() == 11
 
     def test_user_can_FOLLOW_a_user(self):
-        assert True 
+        from friendship.models import Friend, Follow
+
+        user1 = mixer.blend(User, username='nickelback1')
+        user2 = mixer.blend(User, username='nickelback2')
+        following = Follow.objects.add_follower(user2, user1)
+        #import pdb; pdb.set_trace()
+        
+        #List of a user's followers
+        assert user2 in Follow.objects.followers(user1) 
+        #List of who a user is following
+        assert user1 in Follow.objects.following(user2)
         
