@@ -48,11 +48,6 @@ class Course(TimeStampedModel, models.Model):
 	    verbose_name_plural = 'Courses'
 
 
-class AuthorMixin(object):
-    def by_author(self, name):
-        return self.filter(author=name)
-
-
 class Comment(TimeStampedModel, models.Model):
     product = models.ForeignKey(Course, on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
