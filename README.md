@@ -6,3 +6,9 @@ conda create
 virtualenv
 or
 pip install -r requirements/development.txt
+
+
+
+password:
+admin
+okyoutube

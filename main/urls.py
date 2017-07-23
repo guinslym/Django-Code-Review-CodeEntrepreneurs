@@ -11,6 +11,8 @@ from applications.elearning.views.views_crud import robot_files
 
 urlpatterns = [
 	url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
+    
+    #admin
     url(r'^admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     url(r'^ilovemyself/', include(admin.site.urls)),
 ]

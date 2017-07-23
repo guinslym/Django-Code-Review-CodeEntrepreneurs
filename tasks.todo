@@ -5,11 +5,12 @@ Steps:
  ✔ Set the project configuration for different environment @done (17-07-19 01:07)
  ✔ Create an ERD (Entity-relationship-diagram) of the Model @done (17-07-19 02:03)
  ✔ Start the application @done (17-07-19 01:07)
- ☐ Review the Models to see if it  makes sense
- ☐ Test the Models (have some issue there)
- ☐ Do a wireframe
- ☐ Select which frontend framework to use
-   ☐ Boostrap Material design
+ ✔ Review the Models to see if it makes sense @done (17-07-23 07:08)
+ ✔ Test the Models (have some issue there) @done (17-07-23 07:08)
+ ✔ Do a wireframe @done (17-07-23 07:08)
+ ✔ Select which frontend framework to use @done (17-07-23 07:08)
+   ✔ Boostrap Material design @done (17-07-23 07:08)
+ ☐ Decide if I should do the template first
  ☐ Test the app (functionnal programming)
  ☐ Do a MVP test (TDD)
 
