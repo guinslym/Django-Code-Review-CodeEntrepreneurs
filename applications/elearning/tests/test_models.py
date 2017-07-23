@@ -20,7 +20,18 @@ from django.contrib.auth.models import User
 #url helper
 from django.core.urlresolvers import reverse, resolve
 
+"""
 
+___  ___          _      _     
+|  \/  |         | |    | |    
+| .  . | ___   __| | ___| |___ 
+| |\/| |/ _ \ / _` |/ _ \ / __|
+| |  | | (_) | (_| |  __/ \__ \
+\_|  |_/\___/ \__,_|\___|_|___/
+                               
+                               
+
+"""
 class TestCourse(TestCase):
     def test_init(self):
         obj = mixer.blend('elearning.Course')
@@ -58,3 +69,57 @@ class TestCourse(TestCase):
         courses = Course.objects.all()
         for i in courses:
             self.assertTrue(i.author.username, 'nickleback')
+
+class TestUserProfile(TestCase):
+    def test_init(self):
+        obj = mixer.blend('elearning.UserProfile')
+        assert obj.pk == 1, 'Should save an instance'
+
+    def test_right_instance(self):
+        obj = mixer.blend('elearning.UserProfile')
+        assert isinstance(obj, UserProfile) , 'Should be a UserProfile instance'
+
+    def test_count_object(self):
+        obj = mixer.cycle(10).blend('elearning.UserProfile')
+        assert UserProfile.objects.all().count() == 10
+   
+    def test_attributes_of_models(self):
+        obj = mixer.blend('elearning.UserProfile')
+        assert obj.user
+        assert obj.nickname
+        assert obj.bio
+        assert obj.mobile
+        assert obj.address
+        assert obj.userpicture
+        assert obj.status
+        # ...
+
+    def test_relation_has_a_user(self):
+        user = mixer.blend(User, username='nickelback')
+        obj = mixer.blend('elearning.UserProfile', author=user)
+        self.assertTrue(obj.author.username, 'nickelback')
+
+"""
+
+______     _       _   _                 _     _           
+| ___ \   | |     | | (_)               | |   (_)          
+| |_/ /___| | __ _| |_ _  ___  _ __  ___| |__  _ _ __  ___ 
+|    // _ \ |/ _` | __| |/ _ \| '_ \/ __| '_ \| | '_ \/ __|
+| |\ \  __/ | (_| | |_| | (_) | | | \__ \ | | | | |_) \__ \
+\_| \_\___|_|\__,_|\__|_|\___/|_| |_|___/_| |_|_| .__/|___/
+                                                | |        
+                                                |_|        
+
+"""
+
+class TestRelationship(object):
+    """TestRelationship"""
+    def test_user_can_LIKE_a_course(self):
+        assert True 
+
+    def test_user_can_REGISTER_to_a_course(self):
+        assert True 
+
+    def test_user_can_FOLLOW_a_user(self):
+        assert True 
+        
