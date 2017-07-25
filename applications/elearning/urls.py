@@ -13,6 +13,7 @@ urlpatterns = [
       #url(r'^$', views.hello, name='index'),
       url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
 
+      url(r'^$', views.CoursesListView.as_view(), name='index'),
       url(r'^$', views.HomeView.as_view(), name='index'),
 
         ]
