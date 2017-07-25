@@ -9,7 +9,6 @@ django-braces
 Pillow
 whitenoise
 wget==3.2
-pytz
 timeago
 python-dateutil
 django-allauth
@@ -17,3 +16,9 @@ django-vote==2.1.4
 django-friendship
 django-flat-theme
 django-hitcount
+
+# Unicode slugification
+awesome-slugify==1.6.5
+
+# Time zones support
+pytz==2017.2

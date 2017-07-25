@@ -1,4 +1,7 @@
 -r base.txt
+pytest
+pytest-watch
+pytest-django
 backports.shutil-get-terminal-size
 coverage
 decorator
@@ -10,9 +13,6 @@ pexpect
 pickleshare
 ptyprocess
 py
-pytest
-pytest-watch
-pytest-django
 simplegeneric
 mixer==5.6.6
 mock
@@ -33,3 +33,4 @@ pandas
 selenium
 django-webpack-loader
 pytest-ordering
+pytest-sugar
