@@ -22,7 +22,7 @@ from vote.models import VoteModel
 from utils.models_utils import TimeStampedModel
 
 class Course(TimeStampedModel, VoteModel, models.Model):
-	author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
+	author = models.ForeignKey(User, null=False, blank=False)
 	picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
 	                        help_text='Image of the course',
 	                        null=False, blank=False, verbose_name="pics")
@@ -49,7 +49,7 @@ class Course(TimeStampedModel, VoteModel, models.Model):
 
 class Register(TimeStampedModel, models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    student = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
+    student = models.ForeignKey(User, null=False, blank=False)
     
     class Meta:
         ordering = ["-created"]
@@ -59,7 +59,7 @@ class Register(TimeStampedModel, models.Model):
 
 class Comment(TimeStampedModel, models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.CharField(max_length=500)
     
     class Meta:
@@ -69,7 +69,7 @@ class Comment(TimeStampedModel, models.Model):
         verbose_name_plural = 'Comments'
 
 class UserProfile(TimeStampedModel, models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     nickname = models.CharField(max_length=50, blank=False)
     bio = models.TextField(null=False, blank=False)
     mobile = models.TextField(default='Your Mobile Phone Number')
@@ -79,7 +79,7 @@ class UserProfile(TimeStampedModel, models.Model):
 
 
 class Location(TimeStampedModel, models.Model):
-    user =  models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='gps')
+    user_id =  models.OneToOneField(User, on_delete=models.CASCADE, related_name='gps')
     latitude = models.CharField(max_length=40)
     longitude = models.CharField(max_length=40)
     
