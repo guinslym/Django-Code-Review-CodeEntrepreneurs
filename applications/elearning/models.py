@@ -22,7 +22,6 @@ from vote.models import VoteModel
 from utils.models_utils import TimeStampedModel
 
 class Course(TimeStampedModel, VoteModel, models.Model):
-	course_id = models.UUIDField(default=uuid.uuid4, editable=False)
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
 	picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
 	                        help_text='Image of the course',
