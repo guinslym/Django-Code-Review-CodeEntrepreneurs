@@ -1,6 +1,8 @@
 {% load i18n %}
 {% load staticfiles %}
 
+{% get_current_language as LANGUAGE_CODE %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,6 +83,9 @@
       </div>
     </div>
 
+  {% block content %}
+  {% endblock %}
+  
 
       <footer>
         <div class="row">
