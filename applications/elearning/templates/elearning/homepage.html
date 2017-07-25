@@ -208,7 +208,11 @@
                   {{ course.title }}
                 </a>
               </h1>
-              <h2 class="sub_title">{{ course.author.username }}</h2>
+              <h2 class="sub_title">by {{ course.author.username }}</h2>
+              <p>
+                $ {{ course.price }} <br>
+                 {{ course.number_of_minutes }} <br>
+              </p>
 
               <div class="post-meta">
                 <span class="timestamp">
@@ -217,6 +221,14 @@
                 <span class="comments">
                   <i class="fa fa-comments"></i>
                   <a href="#"> 39 comments</a>
+                </span>
+                <span class="comments" style="padding-left:10px">
+                  <i class="fa fa-thumbs-o-up"></i>
+                   9
+                </span>
+                <span class="comments" style="padding-left:10px">
+                  <i class="fa fa-thumbs-o-down"></i>
+                   3
                 </span>
               </div>
             </div>

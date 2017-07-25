@@ -7,8 +7,9 @@ from django.contrib.auth.models import User
 
 from mixer.backend.django import mixer
 
-mixer.cycle(15).blend(User))
+mixer.cycle(15).blend(User)
 mixer.cycle(30).blend(Course, author=mixer.SELECT)
+#bug here Mixer create way more users that I wanted
 mixer.cycle(60).blend(Register, course=mixer.SELECT, student=mixer.SELECT)
 mixer.cycle(60).blend(Comment, course=mixer.SELECT, author=mixer.SELECT)
 
