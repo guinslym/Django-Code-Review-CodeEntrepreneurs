@@ -8,12 +8,11 @@ from applications.elearning.views.views_crud import robot_files
 from applications.elearning.views import views_crud as views
 __author__ = 'Guinsly'
 
+app_name = 'elearning'
 urlpatterns = [
       #url(r'^$', views.hello, name='index'),
       url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
 
-      url(r'^$', views.CoursesListView.as_view(), name='index'),
-      url(r'^(?P<pk>[0-9]+)/$', views.CourseDetailView.as_view(), name='course-detail'),
-      #url(r'^$', views.HomeView.as_view(), name='index'),
+      url(r'^$', views.HomeView.as_view(), name='index'),
 
         ]

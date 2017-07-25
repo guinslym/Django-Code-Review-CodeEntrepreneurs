@@ -92,7 +92,6 @@ class TestUserProfile(TestCase):
         assert obj.address
         assert obj.userpicture
         assert obj.status
-        assert obj.title
         # ...
 
     def test_relation_has_a_user(self):

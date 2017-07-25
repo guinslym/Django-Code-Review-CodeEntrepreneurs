@@ -1,8 +1,5 @@
 
-{% extends "base.html" %}
-{% load humanize %}
 
-  {% block content %}
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <style>
   .post-module {
@@ -117,7 +114,7 @@
   font-weight: 400;
 }
 .post-module .post-content .description {
- // display: none;
+  display: none;
   color: #666666;
   font-size: 14px;
   line-height: 1.8em;
@@ -178,28 +175,9 @@
   color: #f2b202;
 }
 
-.post-module{
-  margin: 40px 0;
-}
-
-
-
 </style>
 
-
-<div class="jumbotron">
-  <div class="container">
-    <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
-  </div>
-</div>
-
-<div class="container">
-  
 <div class="row">
-
-  {% for article in object_list %}
       <div class="col-md-4">
         <div class="column"> 
           
@@ -207,41 +185,74 @@
           <div class="post-module"> 
             <!-- Thumbnail-->
             <div class="thumbnail">
+              <div class="date"> <a href="#0">
+                <div class="day"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                </a> </div>
               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
             <!-- Post Content-->
             <div class="post-content">
               <div class="category">Catagories</div>
-              <h1 class="title">
-                <a href="{% url 'elearning:course-detail' article.id %}">{{ article.title }}</a>
-              </h1>
-              <h2 class="sub_title">$ 5 - 49min.</h2>
-
-              <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span>
-              <span class="comments"><i class="fa fa-thumbs-o-up" style="padding-left: 10px;"></i> 5</span>
-              <span class="comments"><i class="fa fa-thumbs-down" style=""></i> 1</span>
-              </div>
-              <a href="#" class="likes">
-                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" style="padding-left: 10px;padding-right: 10px;"></i>
-              </a>
-              <a href="#" class="likes">
-                <i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i>
-              </a>
+              <h1 class="title">Lorem Ipsum</h1>
+              <h2 class="sub_title">LEAD COORDINATOR</h2>
+              <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+              <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
             </div>
           </div>
         </div>
       </div>
-
-
-
-
-      {% endfor %}
+      <div class="col-md-4">
+        <div class="column"> 
+          
+          <!-- Post-->
+          <div class="post-module"> 
+            <!-- Thumbnail-->
+            <div class="thumbnail">
+              <div class="date"> <a href="#0">
+                <div class="day"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                </a> </div>
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
+            <!-- Post Content-->
+            <div class="post-content">
+              <div class="category">Catagories</div>
+              <h1 class="title">Lorem Ipsum</h1>
+              <h2 class="sub_title">LEAD COORDINATOR</h2>
+              <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+              <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="column"> 
+          
+          <!-- Post-->
+          <div class="post-module"> 
+            <!-- Thumbnail-->
+            <div class="thumbnail">
+              <div class="date"> <a href="#0">
+                <div class="day"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                </a> </div>
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
+            <!-- Post Content-->
+            <div class="post-content">
+              <div class="category">Catagories</div>
+              <h1 class="title">Lorem Ipsum</h1>
+              <h2 class="sub_title">LEAD COORDINATOR</h2>
+              <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+              <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-<!-- container -->
-</div>
-
 
     <script>
-
+      $(window).load(function() {
+  $('.post-module').hover(function() {
+    $(this).find('.description').stop().animate({
+      height: "toggle",
+      opacity: "toggle"
+    }, 300);
+  });
+});
     </script>
-
-{% endblock %}
