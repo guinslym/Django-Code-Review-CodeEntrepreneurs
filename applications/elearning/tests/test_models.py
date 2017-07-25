@@ -49,6 +49,11 @@ class TestCourse(TestCase):
         obj = mixer.blend('elearning.Course')
         assert obj.author
         assert obj.picture
+        assert obj.id
+        assert obj.shortdesc
+        assert obj.slug
+        assert obj.price
+        assert obj.number_of_minutes
         # ...
 
     def test_relation_has_a_user(self):
