@@ -9,11 +9,12 @@ from applications.elearning.views import views_crud as views
 __author__ = 'Guinsly'
 
 urlpatterns = [
-      #url(r'^$', views.hello, name='index'),
-      url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
 
       url(r'^$', views.CourseListView.as_view(), name='index'),
+      url(r'^(?P<pk>[0-9]+)/$', views.CourseDetailView.as_view(), name='course-detail'),
+
       # url(r'^$', views.HomeView.as_view(), name='index'),
       url(r'^dashboard/$', views.DashBoard.as_view(), name='index'),
 
+      url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
         ]

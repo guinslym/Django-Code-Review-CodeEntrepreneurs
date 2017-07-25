@@ -53,7 +53,7 @@ class CourseListView(ListView):
 
     model = Course
     paginate_by = 5
-    template_name = 'elearning/home.html'
+    template_name = 'elearning/homepage.html'
 
     def get_context_data(self, **kwargs):
         context = super(CourseListView, self).get_context_data(**kwargs)
@@ -74,6 +74,16 @@ class DashBoard(TemplateView):
         context['msg'] = 'hello world'
 
         return context
+
+
+
+#http://localhost:8001/
+class CourseDetailView(TemplateView):
+    """
+    Return 
+    """
+    template_name='elearning/detail.html'
+    model = Course
 
 def robot_files(request, filename):
     return render(request, 'elearning/'+filename, {}, content_type="text/plain")

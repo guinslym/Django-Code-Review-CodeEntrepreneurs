@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 from mixer.backend.django import mixer
 
-mixer.cycle(15).blend(User, username=mixer.sequence('username_{0}'))
+mixer.cycle(15).blend(User))
 mixer.cycle(30).blend(Course, author=mixer.SELECT)
 mixer.cycle(60).blend(Register, course=mixer.SELECT, student=mixer.SELECT)
 mixer.cycle(60).blend(Comment, course=mixer.SELECT, author=mixer.SELECT)
