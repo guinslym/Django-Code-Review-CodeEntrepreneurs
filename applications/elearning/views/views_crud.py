@@ -49,7 +49,7 @@ from applications.elearning.models import Location
 from django.contrib.auth.models import User
 
 #http://localhost:8001/
-class HomeView(generic.TemplateView):
+class HomeView(TemplateView):
     """
     Return 
     """
