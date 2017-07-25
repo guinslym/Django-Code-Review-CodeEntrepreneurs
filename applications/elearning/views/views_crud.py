@@ -49,6 +49,16 @@ from applications.elearning.models import Location
 from django.contrib.auth.models import User
 
 #http://localhost:8001/
+class CourseListView(ListView):
+
+    model = Course
+    template_name = 'elearning/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CourseListView, self).get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
 class HomeView(TemplateView):
     """
     Return 

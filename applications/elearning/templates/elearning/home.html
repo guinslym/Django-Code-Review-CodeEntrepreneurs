@@ -1,4 +1,13 @@
+{% extends "base.html" %}
+{% load humanize %}
 
+  {% block content %}
+
+<div class="jumbotron">
+  <h1>Courses</h1>
+</div>
+<div class="container">
+  
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <style>
@@ -177,6 +186,7 @@
 
 </style>
 
+
 <div class="row">
       <div class="col-md-4">
         <div class="column"> 
@@ -246,6 +256,10 @@
       </div>
     </div>
 
+
+</div>
+
+
     <script>
       $(window).load(function() {
   $('.post-module').hover(function() {
@@ -256,3 +270,6 @@
   });
 });
     </script>
+
+
+  {% endblock %}

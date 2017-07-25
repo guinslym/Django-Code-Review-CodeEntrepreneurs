@@ -5,7 +5,6 @@ from applications.elearning.models import UserProfile
 from applications.elearning.models import Location
 from django.contrib.auth.models import User
 
-
 from mixer.backend.django import mixer
 
 mixer.cycle(15).blend(User, username=mixer.sequence('username_{0}'))
