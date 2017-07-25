@@ -13,5 +13,6 @@ urlpatterns = [
       url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
 
       url(r'^$', views.HomeView.as_view(), name='index'),
+      url(r'^dashboard/$', views.DashBoard.as_view(), name='index'),
 
         ]

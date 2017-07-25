@@ -66,5 +66,22 @@ class HomeView(TemplateView):
         return context
 
 
+#http://localhost:8001/
+class DashBoard(TemplateView):
+    """
+    Return 
+    """
+    template_name='elearning/dashboard.html'
+
+    def get_context_data(self, **kwargs):
+        """
+        Return ....
+        """
+        #
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['msg'] = 'hello world'
+
+        return context
+
 def robot_files(request, filename):
-    return render(request, 'emplois/'+filename, {}, content_type="text/plain")
+    return render(request, 'elearning/'+filename, {}, content_type="text/plain")
