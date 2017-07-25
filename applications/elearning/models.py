@@ -69,7 +69,7 @@ class Comment(TimeStampedModel, models.Model):
         verbose_name_plural = 'Comments'
 
 class UserProfile(TimeStampedModel, models.Model):
-    user_id = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     nickname = models.CharField(max_length=50, blank=False)
     bio = models.TextField(null=False, blank=False)
     mobile = models.TextField(default='Your Mobile Phone Number')
@@ -79,7 +79,7 @@ class UserProfile(TimeStampedModel, models.Model):
 
 
 class Location(TimeStampedModel, models.Model):
-    user_id =  models.OneToOneField(User, on_delete=models.CASCADE, related_name='gps')
+    user =  models.OneToOneField(User, on_delete=models.CASCADE, related_name='gps')
     latitude = models.CharField(max_length=40)
     longitude = models.CharField(max_length=40)
     
