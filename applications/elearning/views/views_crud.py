@@ -69,12 +69,27 @@ class HomeView(generic.TemplateView):
 class CoursesListView(ListView):
 
     model = Course
+    paginate_by = 5
     template_name='elearning/home.html'
 
     def get_context_data(self, **kwargs):
         context = super(CoursesListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
+
+#http://localhost:8001/uuid
+
+class CourseTemplateView(TemplateView):
+
+    model = Course
+    template_name='elearning/detail.html'
+
+
+class CourseDetailView(DetailView):
+
+    model = Course
+    template_name='elearning/detail.html'
+
 
 def robot_files(request, filename):
     return render(request, 'emplois/'+filename, {}, content_type="text/plain")
