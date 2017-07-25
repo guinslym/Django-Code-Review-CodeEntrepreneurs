@@ -22,30 +22,31 @@ from vote.models import VoteModel
 from utils.models_utils import TimeStampedModel
 
 class Course(TimeStampedModel, VoteModel, models.Model):
-	author = models.ForeignKey(User, null=False, blank=False)
-	picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
-	                        help_text='Image of the course',
-	                        null=False, blank=False, verbose_name="pics")
-	shortdesc = models.CharField(max_length=440, null=False, help_text='short description of the course', blank=False, verbose_name='shoutout')
-	slug = models.CharField(max_length=220)
-	price = models.DecimalField(max_digits=16, decimal_places=2, default=5)
-	number_of_minutes = models.PositiveIntegerField(validators=[MaxValueValidator(60),])
+    author = models.ForeignKey(User, null=False, blank=False)
+    picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
+                        help_text='Image of the course',
+                        null=False, blank=False, verbose_name="pics")
+    shortdesc = models.CharField(max_length=440,  help_text='short description of the course', blank=False, verbose_name='description')
+    title = models.CharField(max_length=15, help_text='title of the course', blank=False, verbose_name='title')
+    slug = models.CharField(max_length=220)
+    price = models.DecimalField(max_digits=16, decimal_places=2, default=5)
+    number_of_minutes = models.PositiveIntegerField(validators=[MaxValueValidator(60),])
 
-	def __str__(self):
-	    return str(self.id)
-	    
-	def get_absolute_url(self):
-	    return reverse('elearning:course_detail', args=(self.id,))
+    def __str__(self):
+        return str(self.id)
 
-	def get_authors(self):
-	    if self.authors:
-	        return '%s' % " / ".join([author.name for author in self.authors.all()])
-	        
-	class Meta:
-	    ordering = ["-created"]
-	    #ordering = ("?",)
-	    verbose_name = 'Course'
-	    verbose_name_plural = 'Courses'
+    def get_absolute_url(self):
+        return reverse('elearning:course_detail', args=(self.id,))
+
+    def get_authors(self):
+        if self.authors:
+            return '%s' % " / ".join([author.name for author in self.authors.all()])
+        
+    class Meta:
+        ordering = ["-created"]
+        #ordering = ("?",)
+        verbose_name = 'Course'
+        verbose_name_plural = 'Courses'
 
 class Register(TimeStampedModel, models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)

@@ -52,27 +52,12 @@ from django.contrib.auth.models import User
 class CourseListView(ListView):
 
     model = Course
+    paginate_by = 5
     template_name = 'elearning/home.html'
 
     def get_context_data(self, **kwargs):
         context = super(CourseListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
-        return context
-
-class HomeView(TemplateView):
-    """
-    Return 
-    """
-    template_name='elearning/home.html'
-
-    def get_context_data(self, **kwargs):
-        """
-        Return ....
-        """
-        #
-        context = super(HomeView, self).get_context_data(**kwargs)
-        context['msg'] = 'hello world'
-
         return context
 
 
@@ -84,9 +69,6 @@ class DashBoard(TemplateView):
     template_name='elearning/dashboard.html'
 
     def get_context_data(self, **kwargs):
-        """
-        Return ....
-        """
         #
         context = super(HomeView, self).get_context_data(**kwargs)
         context['msg'] = 'hello world'

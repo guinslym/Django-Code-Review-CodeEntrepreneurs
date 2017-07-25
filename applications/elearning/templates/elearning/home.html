@@ -188,6 +188,7 @@
 
 
 <div class="row">
+      {% for course in object_list %}
       <div class="col-md-4">
         <div class="column"> 
           
@@ -202,7 +203,7 @@
             <!-- Post Content-->
             <div class="post-content">
               <div class="category">Catagories</div>
-              <h1 class="title">Lorem Ipsum</h1>
+              <h1 class="title">{{ course.title }}</h1>
               <h2 class="sub_title">LEAD COORDINATOR</h2>
               <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
               <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
@@ -210,50 +211,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="column"> 
-          
-          <!-- Post-->
-          <div class="post-module"> 
-            <!-- Thumbnail-->
-            <div class="thumbnail">
-              <div class="date"> <a href="#0">
-                <div class="day"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                </a> </div>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
-            <!-- Post Content-->
-            <div class="post-content">
-              <div class="category">Catagories</div>
-              <h1 class="title">Lorem Ipsum</h1>
-              <h2 class="sub_title">LEAD COORDINATOR</h2>
-              <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
-              <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="column"> 
-          
-          <!-- Post-->
-          <div class="post-module"> 
-            <!-- Thumbnail-->
-            <div class="thumbnail">
-              <div class="date"> <a href="#0">
-                <div class="day"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                </a> </div>
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
-            <!-- Post Content-->
-            <div class="post-content">
-              <div class="category">Catagories</div>
-              <h1 class="title">Lorem Ipsum</h1>
-              <h2 class="sub_title">LEAD COORDINATOR</h2>
-              <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
-              <div class="post-meta"><span class="timestamp"><i class="fa fa-clock-">o</i> 6 mins ago</span><span class="comments"><i class="fa fa-comments"></i><a href="#"> 39 comments</a></span></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+
+
     </div>
 
 
