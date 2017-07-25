@@ -60,7 +60,7 @@ class Register(TimeStampedModel, models.Model):
 
 class Comment(TimeStampedModel, models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
     comment = models.CharField(max_length=500)
     
     class Meta:
@@ -70,7 +70,7 @@ class Comment(TimeStampedModel, models.Model):
         verbose_name_plural = 'Comments'
 
 class UserProfile(TimeStampedModel, models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     nickname = models.CharField(max_length=50, blank=False)
     bio = models.TextField(null=False, blank=False)
     mobile = models.TextField(default='Your Mobile Phone Number')
@@ -80,7 +80,7 @@ class UserProfile(TimeStampedModel, models.Model):
 
 
 class Location(TimeStampedModel, models.Model):
-    address =  models.OneToOneField(UserProfile, on_delete=models.CASCADE, related_name='gps')
+    user =  models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='gps')
     latitude = models.CharField(max_length=40)
     longitude = models.CharField(max_length=40)
     
