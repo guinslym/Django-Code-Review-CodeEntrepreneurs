@@ -1,11 +1,65 @@
-
 {% extends "base.html" %}
 {% load humanize %}
 
-{% block content %}
+  {% block content %}
 
-<div class="container">
-	
-<h1>{{object.title}}</h1>
+<div class="jumbotron">
+  <h1>Detail</h1>
 </div>
+<div class="container">
+
+<div class="row">
+
+      <div class="col-md-4">
+        <div class="column"> 
+          
+          <!-- Post-->
+          <div class="post-module"> 
+            <!-- Thumbnail-->
+            <div class="thumbnail">
+
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
+            <!-- Post Content-->
+            <div class="post-content">
+              <div class="category">Catagories</div>
+              <h1 class="title">
+                <a href="">
+                  {{ object.title }}
+                </a>
+              </h1>
+              <h2 class="sub_title">by {{ object.author.username }}</h2>
+              <p>
+                $ {{ object.price }} <br>
+                 {{ object.number_of_minutes }} <br>
+              </p>
+
+              <div class="post-meta">
+                <span class="timestamp">
+                  <i class="fa fa-clock-">o</i> 6 mins ago
+                </span>
+                <span class="comments">
+                  <i class="fa fa-comments"></i>
+                  <a href="#"> 39 comments</a>
+                </span>
+                <span class="comments" style="padding-left:10px">
+                  <i class="fa fa-thumbs-o-up"></i>
+                   9
+                </span>
+                <span class="comments" style="padding-left:10px">
+                  <i class="fa fa-thumbs-o-down"></i>
+                   3
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+</div>
+
+
 {% endblock %}

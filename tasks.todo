@@ -1,17 +1,5 @@
 Steps:
- ✔ Choose the name of the project (codeforentrepreneurs) @done (17-07-19 01:07)
- ✔ Create a django project Last version minus 2 @done (17-07-19 01:07)
-   ✔ choose django==1.11 @done (17-07-19 01:07)
- ✔ Set the project configuration for different environment @done (17-07-19 01:07)
- ✔ Create an ERD (Entity-relationship-diagram) of the Model @done (17-07-19 02:03)
- ✔ Start the application @done (17-07-19 01:07)
- ✔ Review the Models to see if it makes sense @done (17-07-23 07:08)
- ✔ Test the Models (have some issue there) @done (17-07-23 07:08)
- ✔ Do a wireframe @done (17-07-23 07:08)
- ✔ Select which frontend framework to use @done (17-07-23 07:08)
-   ✔ Boostrap Material design @done (17-07-23 07:08)
- ✔ Decide if I should do the template first @done (17-07-23 08:38)
- ✔ create applications.elearning.urls.py @done (17-07-25 02:03)
+ ☐ Frontend MVP then CRUD
  ☐ CRUD app for (Course/Teacher/Register/)
  ☐ Create front end 
  ☐ Dashboard/Footer how many objects in db.
@@ -32,3 +20,19 @@ Helper:
 helps:
  ☐ https://github.com/ShareClass/ShareClass/blob/d204f7c80729bc024cd10bd527ff8667224c5ff3/shareclass/course/models.py
  ☐ https://github.com/search?o=desc&q=language%3Apython++filename%3Amodels.py+course+django&s=indexed&type=Code&utf8=%E2%9C%93
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ create applications.elearning.urls.py @done (17-07-25 02:03) @project(Steps)
+ ✔ Decide if I should do the template first @done (17-07-23 08:38) @project(Steps)
+ ✔ Test the Models (have some issue there) @done (17-07-23 07:08) @project(Steps)
+ ✔ Select which frontend framework to use @done (17-07-23 07:08) @project(Steps)
+ ✔ Review the Models to see if it makes sense @done (17-07-23 07:08) @project(Steps)
+ ✔ Do a wireframe @done (17-07-23 07:08) @project(Steps)
+ ✔ Boostrap Material design @done (17-07-23 07:08) @project(Steps)
+ ✔ Create an ERD (Entity-relationship-diagram) of the Model @done (17-07-19 02:03) @project(Steps)
+ ✔ choose django==1.11 @done (17-07-19 01:07) @project(Steps)
+ ✔ Start the application @done (17-07-19 01:07) @project(Steps)
+ ✔ Set the project configuration for different environment @done (17-07-19 01:07) @project(Steps)
+ ✔ Create a django project Last version minus 2 @done (17-07-19 01:07) @project(Steps)
+ ✔ Choose the name of the project (codeforentrepreneurs) @done (17-07-19 01:07) @project(Steps)

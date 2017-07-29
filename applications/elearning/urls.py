@@ -18,3 +18,5 @@ urlpatterns = [
 
       url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
         ]
+
+

@@ -22,19 +22,27 @@ from vote.models import VoteModel
 from utils.models_utils import TimeStampedModel
 
 class Course(TimeStampedModel, VoteModel, models.Model):
-    author = models.ForeignKey(User, null=False, blank=False)
-    picture = models.ImageField(upload_to='elearning/%Y/%m/%d',
-                        help_text='Image of the course',
-                        null=False, blank=False, verbose_name="pics")
-    shortdesc = models.CharField(max_length=440,  help_text='short description of the course', blank=False, verbose_name='description')
-    title = models.CharField(max_length=15, help_text='title of the course', blank=False, verbose_name='title')
-    slug = models.CharField(max_length=220)
-    price = models.DecimalField(max_digits=16, decimal_places=2, default=5)
-    number_of_minutes = models.PositiveIntegerField(
-            validators=[
-            MinValueValidator(12),
-            MaxValueValidator(60)
-            ]
+    author              = models.ForeignKey(User, null=False, blank=False)
+    picture             = models.ImageField(upload_to='elearning/%Y/%m/%d',
+                            help_text='Image of the course',
+                            null=False, blank=False, verbose_name="pics")
+    shortdesc           = models.CharField(
+                            max_length=440,  
+                            help_text='short description of the course', 
+                            blank=False, verbose_name='description')
+    title               = models.CharField(
+                            max_length=15, 
+                            help_text='title of the course', 
+                            blank=False, verbose_name='title')
+    slug                = models.CharField(
+                            max_length=220)
+    price               = models.DecimalField(
+                            max_digits=16, decimal_places=2, default=5)
+    number_of_minutes   = models.PositiveIntegerField(
+                            validators=[
+                            MinValueValidator(12),
+                            MaxValueValidator(60)
+                            ]
         )
 
     def __str__(self):
