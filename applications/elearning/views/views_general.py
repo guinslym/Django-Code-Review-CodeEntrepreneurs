@@ -7,7 +7,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 import logging
 logger = logging.getLogger(__name__)
 
-
 #http://localhost:8001/
 class DashBoard(LoginRequiredMixin, TemplateView):
     """
@@ -24,7 +23,6 @@ class DashBoard(LoginRequiredMixin, TemplateView):
 
 def robot_files(request, filename):
     return render(request, 'elearning/'+filename, {}, content_type="text/plain")
-
 
 def handler404(request):
     response = render(request, 'elearning/page_not_found.html')

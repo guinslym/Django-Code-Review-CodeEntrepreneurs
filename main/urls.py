@@ -37,8 +37,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 ]
 
-#handler404 = 'applications.elearning.views.views_crude.handler404'
-#handler500 = 'applications.elearning.views.views_crude.handler500'
+#handler404 = 'applications.elearning.views.views_general.handler404'
+#handler500 = 'applications.elearning.views.views_general.handler500'
 
 
 if settings.DEBUG:
