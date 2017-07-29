@@ -6,15 +6,22 @@ Steps:
  ☐ Constraint user Create course with the same title (Your Course Already Exist)
  ☐ Comment - Create - Postpone
  ☐ Comment - Delete - Postpone
- ☐ Payments --- user
+ ☐ Payments --- user (Fake payments system)
+ ☐ BankAccount
+ ☐ Access to the Tutorial/courses page only if you payed ()
+ ☐ Add a video when the user is entering the courses that it payed
  ☐ Test the app (functionnal programming)
  ☐ Do a MVP test (TDD)
  ☐ Do a MVP (frontend) --- real basic
  ☐ add license
+ ☐ Add custom slug
  ☐ Prefetch/Select related mixin
- ☐ Add slug
+ ☐ https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/
+ ☐ Add django-vote
+ ☐ Add relationship
  ☐ <i class="fa fa-eye" aria-hidden="true"></i>
  ☐ Superuser admin@gmail.com famille
+ ☐ Django permission
 
 Helper:
  ☐ Infinte scroll

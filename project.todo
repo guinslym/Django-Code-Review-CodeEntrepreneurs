@@ -5,11 +5,13 @@ What do I want to learn:
  ☐ 1. TDD with Django
  ☐ 2. Multi-users access with different permissions
  ☐ 3. Latitude-longitude location (API)
- ☐ 4. Comments
+ ☐ 4. Comments (1 level)
  ☐ 5. Payments system (Paypal)
  ☐ 6. Right way to setup a django project
  ☐ 7. CBV
  ☐ 8. Docker send email
+ ☐ 9. signals
+ ☐ 10. Generic foreign key
 
 Scenario:
  ☐ A User can see all the course available
