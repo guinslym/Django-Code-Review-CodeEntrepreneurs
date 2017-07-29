@@ -4,7 +4,7 @@ from django.conf.urls import url, include
 from . import views
 from django.views import generic
 from django.views.decorators.cache import cache_page
-from applications.elearning.views import views_crud as views
+from applications.elearning.views import course_crud as views
 from applications.elearning.views import views_general as gviews
 __author__ = 'Guinsly'
 

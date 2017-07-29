@@ -49,60 +49,53 @@ from django.views.decorators.cache import cache_page
 import logging
 logger = logging.getLogger(__name__)
 #models
-from applications.elearning.models import Course
-from applications.elearning.models import Register
-from applications.elearning.models import Comment
 from applications.elearning.models import UserProfile
-from applications.elearning.models import Location
+from applications.elearning.models import UserProfile
 from django.contrib.auth.models import User
 
-from applications.elearning.forms import CourseForm
-
-
+from applications.elearning.forms import UserProfileForm
 
 #http://localhost:8001/
-class CourseListView(LoginRequiredMixin, ListView):
+class UserProfileListView(LoginRequiredMixin, ListView):
 
-    model = Course
+    model = UserProfile
     paginate_by = 5
-    template_name = 'elearning/homepage.html'
+    template_name = 'elearning/user_profile_homepage.html'
 
     def get_context_data(self, **kwargs):
-        context = super(CourseListView, self).get_context_data(**kwargs)
+        context = super(UserProfileListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
 
-
-
 #http://localhost:8001/
-class CourseDetailView(LoginRequiredMixin, DetailView):
-    model = Course
-    template_name = 'elearning/course_detail.html'
+class UserProfileDetailView(LoginRequiredMixin, DetailView):
+    model = UserProfile
+    template_name = 'elearning/userprofile_detail.html'
 
     def get_context_data(self, **kwargs):
-        context = super(CourseDetailView, self).get_context_data(**kwargs)
+        context = super(UserProfileDetailView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
 
-product_detail = CourseDetailView.as_view()
+product_detail = UserProfileDetailView.as_view()
 
 #http://localhost:8001/
-class AdminCourseListView(LoginRequiredMixin, ListView):
+class AdminUserProfileListView(LoginRequiredMixin, ListView):
 
-    model = Course
+    model = UserProfile
     paginate_by = 5
     template_name = 'elearning/homepage.html'
 
     def get_context_data(self, **kwargs):
-        context = super(CourseListView, self).get_context_data(**kwargs)
+        context = super(UserProfileListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
 
-class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = Course
-    form_class = CourseForm
-    template_name = "elearning/course_update.html"
-    success_message = 'Successfully Updated a Course entry'
+class UserProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = UserProfile
+    form_class = UserProfileForm
+    template_name = "elearning/userprofile_update.html"
+    success_message = 'Successfully Updated a UserProfile entry'
 
     def dispatch(self, *args, **kwargs):
         return super(self.__class__, self).dispatch(self.request, *args, **kwargs)
@@ -113,25 +106,25 @@ class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         #self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
 
-product_update = login_required(CourseUpdateView.as_view())
+product_update = login_required(UserProfileUpdateView.as_view())
 
-class CourseCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    form_class = CourseForm
-    template_name = "elearning/course_create.html"
+class UserProfileCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    form_class = UserProfileForm
+    template_name = "elearning/userprofile_create.html"
     success_message = 'Successfully Added a Post entry'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.author = self.request.user
-        return super(CourseCreateView, self).form_valid(form)
+        return super(UserProfileCreateView, self).form_valid(form)
 
-product_new = login_required(CourseCreateView.as_view())
+product_new = login_required(UserProfileCreateView.as_view())
 
 
-class  CourseDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
-    model = Course
+class  UserProfileDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = UserProfile
     success_message = "Session %(name)s was removed successfully"
-    success_url = reverse_lazy('elearning:courses_home')
+    success_url = reverse_lazy('elearning:userprofile_home')
     
     def delete(self, *args, **kwargs):
         self.object = self.get_object()
@@ -144,16 +137,5 @@ class  CourseDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
         else:
             return HttpResponse('not the owner')
 
-product_update = login_required(CourseUpdateView.as_view())
+product_update = login_required(UserProfileUpdateView.as_view())
 
-def handler404(request):
-    response = render(request, 'elearning/page_not_found.html')
-    logger.info('Error page not found 404')
-    response.status_code = 404
-    return response
-
-def handler500(request):
-    response = render(request, 'elearning/server_error.html')
-    logger.info('Error page not found 500')
-    response.status_code = 500
-    return response
