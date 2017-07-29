@@ -96,27 +96,14 @@ class UserProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView)
 
 product_update = login_required(UserProfileUpdateView.as_view())
 
-class UserProfileCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    form_class = UserProfileForm
-    template_name = "userprofile/userprofile_create.html"
-    success_message = 'Successfully Added a Post entry'
-
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.author = self.request.user
-        return super(UserProfileCreateView, self).form_valid(form)
-
-product_new = login_required(UserProfileCreateView.as_view())
-
-
 class  UserProfileDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = UserProfile
     success_message = "Session %(name)s was removed successfully"
-    success_url = reverse_lazy('elearning:userprofile_home')
+    success_url = reverse_lazy('elearning:userprofile_list')
     
     def delete(self, *args, **kwargs):
         self.object = self.get_object()
-        if self.request.user == self.object.author:
+        if self.request.user == self.object.user:
             # Return the appropriate response
             success_url = self.get_success_url()
             self.object.delete()
