@@ -89,6 +89,18 @@ class UserProfile(TimeStampedModel, models.Model):
     mobile = models.TextField(default='Your Mobile Phone Number')
     address = models.TextField(default='Your Address', null=False, blank=False)
     userpicture = models.ImageField(upload_to="my_profile/%Y/%m/%d", null=False, blank=False)
+    
+    def __str__(self):
+        return str(self.id)
+
+    def get_absolute_url(self):
+        return reverse('elearning:userprofile_detail', args=(self.id,))
+
+    class Meta:
+        ordering = ["-created"]
+        #ordering = ("?",)
+        verbose_name = 'UserProfile'
+        verbose_name_plural = 'UserProfiles'
 
 class Location(TimeStampedModel, models.Model):
     user =  models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='gps')

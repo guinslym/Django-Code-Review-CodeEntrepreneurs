@@ -60,7 +60,7 @@ class UserProfileListView(LoginRequiredMixin, ListView):
 
     model = UserProfile
     paginate_by = 5
-    template_name = 'userprofile/user_profile_homepage.html'
+    template_name = 'userprofile/userprofile_homepage.html'
 
     def get_context_data(self, **kwargs):
         context = super(UserProfileListView, self).get_context_data(**kwargs)

@@ -35,7 +35,7 @@ urlpatterns = [
         ),
     url(r'^ilovemyself/', include(admin.site.urls)),
     url(r'^accounts/', include('allauth.urls')),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 #handler404 = 'applications.elearning.views.views_general.handler404'
 #handler500 = 'applications.elearning.views.views_general.handler500'
