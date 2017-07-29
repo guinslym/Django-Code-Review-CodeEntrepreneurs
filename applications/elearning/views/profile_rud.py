@@ -103,7 +103,7 @@ class  UserProfileDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView
     
     def delete(self, *args, **kwargs):
         self.object = self.get_object()
-        if self.request.user == self.object.user:
+        if self.request.user == self.object.author:
             # Return the appropriate response
             success_url = self.get_success_url()
             self.object.delete()
@@ -114,3 +114,17 @@ class  UserProfileDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView
 
 product_update = login_required(UserProfileUpdateView.as_view())
 
+
+"""
+class UserProfileCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    form_class = UserProfileForm
+    template_name = "userprofile/userprofile_create.html"
+    success_message = 'Successfully Added a Post entry'
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.author = self.request.user
+        return super(UserProfileCreateView, self).form_valid(form)
+
+product_new = login_required(UserProfileCreateView.as_view())
+"""
