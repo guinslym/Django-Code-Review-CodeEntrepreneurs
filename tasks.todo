@@ -1,34 +1,18 @@
 Steps:
- ✔ Frontend MVP then CRUD @done (17-07-29 07:07)
- ✔ Course - View @done (17-07-29 03:05)
- ✔ Course - Detail @done (17-07-29 03:05)
- ✔ Course - Create @done (17-07-29 03:47)
- ✔ Course - Update @done (17-07-29 03:43)
- ✔ Courses - List @done (17-07-29 03:05)
- ✔ NavBar @done (17-07-29 07:07)
- ✔ CRUD app for (Course/Teacher/Register/) @done (17-07-29 07:07)
- ✔ Profile - List @done (17-07-29 05:05)
- ✔ Profile - Detail @done (17-07-29 04:54)
- ✔ Profile - Update @done (17-07-29 05:05)
- ✔ Profile - Delete @done (17-07-29 05:08)
- ✔ Register - Create @done (17-07-29 07:03)
- ✔ UnRegister - Delete @done (17-07-29 07:03)
- ✔ MyRegistration - List @done (17-07-29 07:03)
+ ☐ Frontend to do
+ ☐ Add messages in frontend
+ ☐ Templatetags registration (kind of templatetags see Django By Example)
+ ☐ Constraint Register to my own course
+ ☐ Constraint user Create course with the same title (Your Course Already Exist)
  ☐ Comment - Create - Postpone
  ☐ Comment - Delete - Postpone
- ✔ AuthorMixin @done (17-07-29 05:23)
- ✔ Create front end @done (17-07-29 01:48)
- ☐ Dashboard/Footer how many objects in db.
- ☐ Remove Categories
- ☐ Add messages in frontend
- ☐ Continue with the Frontend (integration of the Wireframe) finish it. MVP
+ ☐ Payments --- user
  ☐ Test the app (functionnal programming)
  ☐ Do a MVP test (TDD)
  ☐ Do a MVP (frontend) --- real basic
  ☐ add license
- ☐ Add slug
  ☐ Prefetch/Select related mixin
- ☐ Payments --- user
+ ☐ Add slug
  ☐ <i class="fa fa-eye" aria-hidden="true"></i>
  ☐ Superuser admin@gmail.com famille
 
@@ -50,6 +34,26 @@ helps:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Continue with the Frontend (integration of the Wireframe) finish it. MVP @done (17-07-29 07:15) @project(Steps)
+ ✔ Footer @done (17-07-29 07:14) @project(Steps)
+ ✔ Remove Categories @done (17-07-29 07:13) @project(Steps)
+ ✔ NavBar @done (17-07-29 07:07) @project(Steps)
+ ✔ Frontend MVP then CRUD @done (17-07-29 07:07) @project(Steps)
+ ✔ CRUD app for (Course/Teacher/Register/) @done (17-07-29 07:07) @project(Steps)
+ ✔ UnRegister - Delete @done (17-07-29 07:03) @project(Steps)
+ ✔ Register - Create @done (17-07-29 07:03) @project(Steps)
+ ✔ MyRegistration - List @done (17-07-29 07:03) @project(Steps)
+ ✔ AuthorMixin @done (17-07-29 05:23) @project(Steps)
+ ✔ Profile - Delete @done (17-07-29 05:08) @project(Steps)
+ ✔ Profile - Update @done (17-07-29 05:05) @project(Steps)
+ ✔ Profile - List @done (17-07-29 05:05) @project(Steps)
+ ✔ Profile - Detail @done (17-07-29 04:54) @project(Steps)
+ ✔ Course - Create @done (17-07-29 03:47) @project(Steps)
+ ✔ Course - Update @done (17-07-29 03:43) @project(Steps)
+ ✔ Courses - List @done (17-07-29 03:05) @project(Steps)
+ ✔ Course - View @done (17-07-29 03:05) @project(Steps)
+ ✔ Course - Detail @done (17-07-29 03:05) @project(Steps)
+ ✔ Create front end @done (17-07-29 01:48) @project(Steps)
  ✔ create applications.elearning.urls.py @done (17-07-25 02:03) @project(Steps)
  ✔ Decide if I should do the template first @done (17-07-23 08:38) @project(Steps)
  ✔ Test the Models (have some issue there) @done (17-07-23 07:08) @project(Steps)

@@ -31,7 +31,11 @@
                   {{ object.title }}
                 </a>
               </h1>
-              <h2 class="sub_title">by {{ object.author.username }}</h2>
+               <h2 class="sub_title">by 
+              <a href="{% url 'elearning:userprofile_detail' course.author.id %}">
+                              {{ course.author.username }}
+              </a>
+              </h2>
               <p>
                 $ {{ object.price }} <br>
                  {{ object.number_of_minutes }} <br>
