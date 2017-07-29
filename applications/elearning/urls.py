@@ -6,6 +6,7 @@ from django.views import generic
 from django.views.decorators.cache import cache_page
 from applications.elearning.views import course_crud as views
 from applications.elearning.views import profile_rud as userprofile
+from applications.elearning.views import register_crd as register
 from applications.elearning.views import views_general as gviews
 __author__ = 'Guinsly'
 
@@ -19,6 +20,10 @@ urlpatterns = [
    url(r'^$', views.CourseListView.as_view(), name='courses_home'),
    url(r'^$', views.CourseListView.as_view(), name='index'),
 
+   #Register
+   url(r'^register_list/$', register.RegisterListView.as_view(), name='register_list'),
+   url(r'^RegisterAndUnRegister/(?P<pk>\d+)/$', register.RegisterAndUnRegister.as_view(), name='register_and_unregister_create'),
+   
    #userprofile
    url(r'^userprofile_list/$', userprofile.UserProfileListView.as_view(), name='userprofile_list'),
    url(r'^userprofile_update/(?P<pk>\d+)/$', userprofile.UserProfileUpdateView.as_view(), name='userprofile_update'),

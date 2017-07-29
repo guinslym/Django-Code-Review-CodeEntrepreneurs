@@ -10,21 +10,25 @@ Steps:
  ✔ Profile - List @done (17-07-29 05:05)
  ✔ Profile - Detail @done (17-07-29 04:54)
  ✔ Profile - Update @done (17-07-29 05:05)
- ☐ Profile - Delete
- ☐ Register - List
+ ✔ Profile - Delete @done (17-07-29 05:08)
  ☐ Register - Create
- ☐ Register - Delete
- ☐ Comment - Create
- ☐ Comment - Delete
- ☐ Comment - List
- ☐ AuthorMixin
+ ☐ UnRegister - Delete
+ ☐ MyRegistration - List
+ ☐ Comment - Create - Postpone
+ ☐ Comment - Delete - Postpone
+ ✔ AuthorMixin @done (17-07-29 05:23)
  ✔ Create front end @done (17-07-29 01:48)
  ☐ Dashboard/Footer how many objects in db.
+ ☐ Remove Categories
+ ☐ Add messages in frontend
  ☐ Continue with the Frontend (integration of the Wireframe) finish it. MVP
  ☐ Test the app (functionnal programming)
  ☐ Do a MVP test (TDD)
  ☐ Do a MVP (frontend) --- real basic
  ☐ add license
+ ☐ Add slug
+ ☐ Prefetch/Select related mixin
+ ☐ Payments --- user
  ☐ <i class="fa fa-eye" aria-hidden="true"></i>
  ☐ Superuser admin@gmail.com famille
 
@@ -37,6 +41,8 @@ Helper:
    ☐ https://stackoverflow.com/questions/18172102/object-ownership-validation-in-django-updateview
    ☐ 
 
+Question:
+ ☐ What is the difference between a user is deleting a view (AuthorMixin) and DeleteView
 
 helps:
  ☐ https://github.com/ShareClass/ShareClass/blob/d204f7c80729bc024cd10bd527ff8667224c5ff3/shareclass/course/models.py

@@ -71,6 +71,13 @@ class Register(TimeStampedModel, models.Model):
         verbose_name = 'Register'
         verbose_name_plural = 'Registrations'
 
+    @staticmethod
+    def student_alregistered(self, user):
+        return Register.objects.create(
+            course= self,
+            student= user
+            )
+
 class Comment(TimeStampedModel, models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

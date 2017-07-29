@@ -1,5 +1,7 @@
 {% extends "elearning/base.html" %}
 {% load humanize %}
+{% load static %}
+{% load registration %}
 
   {% block content %}
 
@@ -62,6 +64,18 @@
           </td>
           <td>
             <a class="btn btn-default right" href="{% url 'course_create' %}">Create</a>
+          </td>
+        </tr>
+      </table>
+
+      <table class="table">
+        <tr>
+          <td>
+          <form class="right" method="POST" action="{% url 'register_and_unregister_create' object.id %}">
+         {% csrf_token %}
+         <input type="hidden" name="course_id" value="{{object.id}}">
+         <input class="btn btn-primary red darken-2" type="submit" value="Register">
+      </form>  
           </td>
         </tr>
       </table>
