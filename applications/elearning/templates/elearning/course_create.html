@@ -2,11 +2,15 @@
 {% load humanize %}
 
   {% block content %}
+  <div class="container">
+  	<div class="row">
+  		  <h3 class="title">Create New Course</h3>
+  <form method="post" class="form-group"  enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input class="btn btn-default" type="submit" value="Create" />
+  </form>
+  	</div>
+  </div>
 
-
-<form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save" />
-</form>
-
-  {% endblock %}
+{% endblock %}

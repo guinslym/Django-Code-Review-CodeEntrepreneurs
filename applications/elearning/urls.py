@@ -4,8 +4,8 @@ from django.conf.urls import url, include
 from . import views
 from django.views import generic
 from django.views.decorators.cache import cache_page
-from applications.elearning.views.views_crud import robot_files
 from applications.elearning.views import views_crud as views
+from applications.elearning.views import views_general as gviews
 __author__ = 'Guinsly'
 
 
@@ -22,9 +22,8 @@ urlpatterns = [
       #url(r'^(?P<pk>[0-9]+)/$', views.CourseDetailView.as_view(), name='course-detail'),
 
       # url(r'^$', views.HomeView.as_view(), name='index'),
-      url(r'^dashboard/$', views.DashBoard.as_view(), name='index'),
+      url(r'^dashboard/$', gviews.DashBoard.as_view(), name='index'),
 
-      url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
         ]
 
 

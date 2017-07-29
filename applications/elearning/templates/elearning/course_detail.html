@@ -49,6 +49,23 @@
                   <i class="fa fa-thumbs-o-down"></i>
                    3
                 </span>
+
+      <table class="table">
+        <tr>
+          <td>
+                <form class="right" method="POST" action="{% url 'course_delete' object.id %}">
+         {% csrf_token %}<input class="btn btn-danger red darken-2" type="submit" value="DELETE">
+      </form>  
+          </td>
+          <td>
+             <a class="btn btn-primary right" href="{% url 'course_update' object.id %}">Update</a>
+          </td>
+          <td>
+            <a class="btn btn-default right" href="{% url 'course_create' %}">Create</a>
+          </td>
+        </tr>
+      </table>
+
               </div>
             </div>
           </div>
@@ -57,7 +74,6 @@
 
 
     </div>
-
 
 </div>
 

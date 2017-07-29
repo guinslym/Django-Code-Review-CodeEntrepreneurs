@@ -71,28 +71,6 @@ class CourseListView(LoginRequiredMixin, ListView):
         return context
 
 
-#http://localhost:8001/
-class DashBoard(LoginRequiredMixin, TemplateView):
-    """
-    Return 
-    """
-    template_name='elearning/dashboard.html'
-
-    def get_context_data(self, **kwargs):
-        #
-        context = super(HomeView, self).get_context_data(**kwargs)
-        context['msg'] = 'hello world'
-
-        return context
-
-
-
-
-
-
-def robot_files(request, filename):
-    return render(request, 'elearning/'+filename, {}, content_type="text/plain")
-
 
 #http://localhost:8001/
 class CourseDetailView(LoginRequiredMixin, DetailView):
@@ -118,15 +96,10 @@ class AdminCourseListView(LoginRequiredMixin, ListView):
         context['now'] = timezone.now()
         return context
 
-#Create
-#Edit
-#Delete
-
-
 class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Course
     form_class = CourseForm
-    template_name = "elearnning/course_update.html"
+    template_name = "elearning/course_update.html"
     success_message = 'Successfully Updated a Course entry'
 
     def dispatch(self, *args, **kwargs):
@@ -150,7 +123,7 @@ class CourseCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
-        #self.object.author = self.request.user
+        self.object.author = self.request.user
         return super(CourseCreateView, self).form_valid(form)
 
 product_new = login_required(CourseCreateView.as_view())
