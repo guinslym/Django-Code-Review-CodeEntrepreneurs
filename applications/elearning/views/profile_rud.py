@@ -60,7 +60,7 @@ class UserProfileListView(LoginRequiredMixin, ListView):
 
     model = UserProfile
     paginate_by = 5
-    template_name = 'elearning/user_profile_homepage.html'
+    template_name = 'userprofile/user_profile_homepage.html'
 
     def get_context_data(self, **kwargs):
         context = super(UserProfileListView, self).get_context_data(**kwargs)
@@ -70,7 +70,7 @@ class UserProfileListView(LoginRequiredMixin, ListView):
 #http://localhost:8001/
 class UserProfileDetailView(LoginRequiredMixin, DetailView):
     model = UserProfile
-    template_name = 'elearning/userprofile_detail.html'
+    template_name = 'userprofile/userprofile_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(UserProfileDetailView, self).get_context_data(**kwargs)
@@ -79,22 +79,10 @@ class UserProfileDetailView(LoginRequiredMixin, DetailView):
 
 product_detail = UserProfileDetailView.as_view()
 
-#http://localhost:8001/
-class AdminUserProfileListView(LoginRequiredMixin, ListView):
-
-    model = UserProfile
-    paginate_by = 5
-    template_name = 'elearning/homepage.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(UserProfileListView, self).get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        return context
-
 class UserProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = UserProfile
     form_class = UserProfileForm
-    template_name = "elearning/userprofile_update.html"
+    template_name = "userprofile/userprofile_update.html"
     success_message = 'Successfully Updated a UserProfile entry'
 
     def dispatch(self, *args, **kwargs):
@@ -110,7 +98,7 @@ product_update = login_required(UserProfileUpdateView.as_view())
 
 class UserProfileCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = UserProfileForm
-    template_name = "elearning/userprofile_create.html"
+    template_name = "userprofile/userprofile_create.html"
     success_message = 'Successfully Added a Post entry'
 
     def form_valid(self, form):

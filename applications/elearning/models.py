@@ -89,8 +89,6 @@ class UserProfile(TimeStampedModel, models.Model):
     mobile = models.TextField(default='Your Mobile Phone Number')
     address = models.TextField(default='Your Address', null=False, blank=False)
     userpicture = models.ImageField(upload_to="my_profile/%Y/%m/%d", null=False, blank=False)
-    status = models.TextField(default="Great to have someone to lean on", null=False, blank=False)
-
 
 class Location(TimeStampedModel, models.Model):
     user =  models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='gps')
