@@ -58,6 +58,8 @@ from django.contrib.auth.models import User
 
 from applications.elearning.forms import CourseForm
 
+
+
 #http://localhost:8001/
 class CourseListView(LoginRequiredMixin, ListView):
 
@@ -111,10 +113,7 @@ class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         #self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
 
-
 product_update = login_required(CourseUpdateView.as_view())
-
-
 
 class CourseCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     form_class = CourseForm
@@ -131,8 +130,19 @@ product_new = login_required(CourseCreateView.as_view())
 
 class  CourseDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Course
-    #success_message = 'Successfully Deleted a Post entry'
+    success_message = "Session %(name)s was removed successfully"
     success_url = reverse_lazy('elearning:courses_home')
+    
+    def delete(self, *args, **kwargs):
+        self.object = self.get_object()
+        if self.request.user == self.object.author:
+            # Return the appropriate response
+            success_url = self.get_success_url()
+            self.object.delete()
+            messages.success(self.request, self.success_message % obj.__dict__)
+            return HttpResponseRedirect(success_url)
+        else:
+            return HttpResponse('not the owner')
 
 product_update = login_required(CourseUpdateView.as_view())
 

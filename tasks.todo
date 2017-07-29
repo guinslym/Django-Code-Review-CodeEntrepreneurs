@@ -5,7 +5,18 @@ Steps:
  ✔ Course - Create @done (17-07-29 03:47)
  ✔ Course - Update @done (17-07-29 03:43)
  ✔ Courses - List @done (17-07-29 03:05)
+ ☐ NavBar
  ☐ CRUD app for (Course/Teacher/Register/)
+ ☐ Profile - List
+ ☐ Profile - Detail
+ ☐ Profile - Update
+ ☐ Register - List
+ ☐ Register - Create
+ ☐ Register - Delete
+ ☐ Comment - Create
+ ☐ Comment - Delete
+ ☐ Comment - List
+ ☐ AuthorMixin
  ✔ Create front end @done (17-07-29 01:48)
  ☐ Dashboard/Footer how many objects in db.
  ☐ Continue with the Frontend (integration of the Wireframe) finish it. MVP
@@ -21,6 +32,9 @@ Helper:
    ☐ https://simpleisbetterthancomplex.com/tutorial/2017/03/13/how-to-create-infinite-scroll-with-django.html
  ☐ Card
    ☐ https://bootsnipp.com/snippets/aeqlE
+   ☐ ☐Self author
+   ☐ https://stackoverflow.com/questions/18172102/object-ownership-validation-in-django-updateview
+   ☐ 
 
 
 helps:
