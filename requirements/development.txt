@@ -34,3 +34,5 @@ selenium
 django-webpack-loader
 pytest-ordering
 pytest-sugar
+django-debug-toolbar-template-profiler
+django-debug-toolbar-force

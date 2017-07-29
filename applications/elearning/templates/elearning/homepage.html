@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "elearning/base.html" %}
 {% load humanize %}
 
   {% block content %}
@@ -23,7 +23,7 @@
             <div class="post-content">
               <div class="category">Catagories</div>
               <h1 class="title">
-                <a href="{% url 'elearning:course-detail' course.id %}">
+                <a href="{% url 'elearning:course_detail' course.id %}">
                   {{ course.title }}
                 </a>
               </h1>

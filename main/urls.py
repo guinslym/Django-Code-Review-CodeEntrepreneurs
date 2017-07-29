@@ -17,7 +17,7 @@ urlpatterns = [
 		robot_files, 
         name='home-files'
 		),
-	
+
 	#Main application
     url(
     	r'^elearning/', 
@@ -34,7 +34,15 @@ urlpatterns = [
             namespace='admin_honeypot')
         ),
     url(r'^ilovemyself/', include(admin.site.urls)),
+    url(r'^accounts/', include('allauth.urls')),
 ]
 
 #handler404 = 'applications.elearning.views.views_crude.handler404'
 #handler500 = 'applications.elearning.views.views_crude.handler500'
+
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ]

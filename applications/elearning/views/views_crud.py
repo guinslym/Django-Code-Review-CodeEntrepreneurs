@@ -21,11 +21,19 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from django.utils import timezone
 from django.core import serializers
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.http import HttpResponse
 from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+
+#Protection
+from braces.views import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+
+#messages
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 #pagination
 from django.core.paginator import (
@@ -48,8 +56,10 @@ from applications.elearning.models import UserProfile
 from applications.elearning.models import Location
 from django.contrib.auth.models import User
 
+from applications.elearning.forms import CourseForm
+
 #http://localhost:8001/
-class CourseListView(ListView):
+class CourseListView(LoginRequiredMixin, ListView):
 
     model = Course
     paginate_by = 5
@@ -62,7 +72,7 @@ class CourseListView(ListView):
 
 
 #http://localhost:8001/
-class DashBoard(TemplateView):
+class DashBoard(LoginRequiredMixin, TemplateView):
     """
     Return 
     """
@@ -77,13 +87,90 @@ class DashBoard(TemplateView):
 
 
 
-#http://localhost:8001/
-class CourseDetailView(TemplateView):
-    """
-    Return 
-    """
-    template_name='elearning/detail.html'
-    model = Course
+
+
 
 def robot_files(request, filename):
     return render(request, 'elearning/'+filename, {}, content_type="text/plain")
+
+
+#http://localhost:8001/
+class CourseDetailView(LoginRequiredMixin, DetailView):
+    model = Course
+    template_name = 'elearning/course_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CourseDetailView, self).get_context_data(**kwargs)
+        context['now'] = datetime.now()
+        return context
+
+product_detail = CourseDetailView.as_view()
+
+#http://localhost:8001/
+class AdminCourseListView(LoginRequiredMixin, ListView):
+
+    model = Course
+    paginate_by = 5
+    template_name = 'elearning/homepage.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CourseListView, self).get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+#Create
+#Edit
+#Delete
+
+
+class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Course
+    form_class = CourseForm
+    template_name = "elearnning/course_update.html"
+    success_message = 'Successfully Updated a Course entry'
+
+    def dispatch(self, *args, **kwargs):
+        return super(self.__class__, self).dispatch(self.request, *args, **kwargs)
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        #migh need to remove that line
+        #self.object.author = self.request.user
+        return super(self.__class__, self).form_valid(form)
+
+
+product_update = login_required(CourseUpdateView.as_view())
+
+
+
+class CourseCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    form_class = CourseForm
+    template_name = "elearning/course_create.html"
+    success_message = 'Successfully Added a Post entry'
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        #self.object.author = self.request.user
+        return super(CourseCreateView, self).form_valid(form)
+
+product_new = login_required(CourseCreateView.as_view())
+
+
+class  CourseDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = Course
+    #success_message = 'Successfully Deleted a Post entry'
+    success_url = reverse_lazy('elearning:courses_home')
+
+product_update = login_required(CourseUpdateView.as_view())
+
+def handler404(request):
+    response = render(request, 'elearning/page_not_found.html')
+    logger.info('Error page not found 404')
+    response.status_code = 404
+    return response
+
+def handler500(request):
+    response = render(request, 'elearning/server_error.html')
+    logger.info('Error page not found 500')
+    response.status_code = 500
+    return response

@@ -1,7 +1,11 @@
 Steps:
  ☐ Frontend MVP then CRUD
+ ☐ Course - View
+ ☐ Course - Detail
+ ☐ Course - Add
+ ☐ Courses - List
  ☐ CRUD app for (Course/Teacher/Register/)
- ☐ Create front end 
+ ✔ Create front end @done (17-07-29 01:48)
  ☐ Dashboard/Footer how many objects in db.
  ☐ Continue with the Frontend (integration of the Wireframe) finish it. MVP
  ☐ Test the app (functionnal programming)
@@ -9,6 +13,7 @@ Steps:
  ☐ Do a MVP (frontend) --- real basic
  ☐ add license
  ☐ <i class="fa fa-eye" aria-hidden="true"></i>
+ ☐ Superuser admin@gmail.com famille
 
 Helper:
  ☐ Infinte scroll
