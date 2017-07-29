@@ -1,9 +1,10 @@
 Steps:
  ☐ Frontend MVP then CRUD
- ☐ Course - View
- ☐ Course - Detail
- ☐ Course - Add
- ☐ Courses - List
+ ✔ Course - View @done (17-07-29 03:05)
+ ✔ Course - Detail @done (17-07-29 03:05)
+ ☐ Course - Create 
+ ☐ Course - Update
+ ✔ Courses - List @done (17-07-29 03:05)
  ☐ CRUD app for (Course/Teacher/Register/)
  ✔ Create front end @done (17-07-29 01:48)
  ☐ Dashboard/Footer how many objects in db.
