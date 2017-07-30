@@ -7,7 +7,7 @@ Steps:
    ✔ Add messages in frontend @done (17-07-30 04:59)
    ✔ Course pagination (Add pagination) @done (17-07-30 05:05)
    ✔ Add a video when the user is entering the courses that it payed @done (17-07-30 05:22)
-   ☐ Prefetch/Select related mixin
+   ✔ Prefetch/Select related mixin @done (17-07-30 05:44)
    ☐ Add django-vote
    ☐ Check wireframe to see if it's good
  ☐ Templatetags registration (kind of templatetags see Django By Example)
@@ -19,8 +19,8 @@ Steps:
  ☐ BankAccount
  ☐ Test the app (functionnal programming)
  ☐ Access to the Tutorial/courses page only if you payed ()
- ☐ Do a MVP test (TDD)
- ☐ Do a MVP (frontend) --- real basic
+ ✔ Do a MVP test (TDD) @done (17-07-30 05:44)
+ ✔ Do a MVP (frontend) --- real basic @done (17-07-30 05:44)
  ☐ add license
  ✔ Add custom slug @done (17-07-30 04:14)
  ☐ https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/

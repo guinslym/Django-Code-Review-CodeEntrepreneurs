@@ -57,6 +57,8 @@ from applications.elearning.models import Location
 from django.contrib.auth.models import User
 
 from applications.elearning.forms import CourseForm
+from braces.views import PrefetchRelatedMixin
+from braces.views import SelectRelatedMixin
 
 #http://localhost:8001/
 class CourseListView(LoginRequiredMixin, ListView):
@@ -64,6 +66,8 @@ class CourseListView(LoginRequiredMixin, ListView):
     model = Course
     paginate_by = 10
     template_name = 'elearning/homepage.html'
+    #not sure about this next line
+    prefetch_related = ['course_set__user', 'user_set_userprofile']
 
     def get_context_data(self, **kwargs):
         context = super(CourseListView, self).get_context_data(**kwargs)
@@ -74,6 +78,7 @@ class CourseListView(LoginRequiredMixin, ListView):
 class CourseDetailView(LoginRequiredMixin, DetailView):
     model = Course
     template_name = 'elearning/course_detail.html'
+    prefetch_related = ['course_set__user']
 
     def get_context_data(self, **kwargs):
         context = super(CourseDetailView, self).get_context_data(**kwargs)
