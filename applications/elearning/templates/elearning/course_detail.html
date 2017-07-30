@@ -31,9 +31,9 @@
                   {{ object.title }}
                 </a>
               </h1>
-               <h2 class="sub_title">by 
-              <a href="{% url 'elearning:userprofile_detail' course.author.id %}">
-                              {{ course.author.username }}
+              <h2 class="sub_title">by 
+              <a href="{% url 'elearning:userprofile_detail' course.author.profile.slug %}">
+                              {{ course.author.profile.fullname }}
               </a>
               </h2>
               <p>
@@ -90,6 +90,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="col-lg-8">
+
       </div>
 
 

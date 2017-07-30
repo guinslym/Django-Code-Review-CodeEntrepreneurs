@@ -38,10 +38,11 @@
             </a>
             <div class="media-body">
                 <h4 class="media-heading">
-                <a href="{% url 'elearning:userprofile_detail' userprofile.id %}">
-                {{ userprofile.nickname}} 
+                
+              <a href="{% url 'elearning:userprofile_detail' course.author.profile.slug %}">
+                              {{ course.author.profile.fullname }}
+              </a>
                   
-                </a>
                 <small> India</small></h4>
                 <h5>{{userprofile.bio}} <a href="http://gridle.in">Gridle.in</a></h5>
                 <hr style="margin:8px auto">

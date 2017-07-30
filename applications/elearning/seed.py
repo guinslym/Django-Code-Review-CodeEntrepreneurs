@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from utils.models_utils import random_string_generator
 
+from faker import Factory
+fake = Factory.create()
+
 Course.objects.all().delete()
 Register.objects.all().delete()
 Comment.objects.all().delete()
@@ -49,8 +52,11 @@ for i in courses:
 	print("{} - {}".format(i.title , i.slug))
 
 
-courses = UserProfile.objects.all()
-for i in courses:
-	i.slug = "CodeReview-User-" + random_string_generator(size=6) + "-" + slugify(i.firstname+"-"+i.lastname) 
+profiles = UserProfile.objects.all()
+for i in profiles:
+	i.slug = "CodeReview-User-" + random_string_generator(size=6) + "-" + slugify(i.fullname) 
+	i.bio = fake.text(300)
 	i.save()
 	print("{} - {} - {}".format(i.firstname, i.lastname, i.slug))
+
+

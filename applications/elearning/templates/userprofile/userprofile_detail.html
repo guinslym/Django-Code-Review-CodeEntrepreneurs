@@ -26,15 +26,20 @@
         /*-webkit-font-smoothing:antialiased;*/
     }
  </style>
+ <div class="container">
+ <div class="row text-center">
+   
+  <h1>My Profile</h1>
+ </div>
+   
 <div class="row">
-
-    <div class="col-lg-5">
+    <div class="col-lg-6 col-lg-offset-2">
         <div class="media">
             <a class="pull-left" href="#">
-                <img class="media-object dp img-circle" src="{% static object.userpicture %}" style="width: 100px;height:100px;">
+                <img class="media-object dp img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/guinslym/128.jpg" style="width: 100px;height:100px;">
             </a>
             <div class="media-body">
-                <h4 class="media-heading">{{ object.nickname}} <small> India</small></h4>
+                <h4 class="media-heading">{{ object.fullname}} <small> Haiti</small></h4>
                 <h5>{{object.bio}} <a href="http://gridle.in">Gridle.in</a></h5>
                 <hr style="margin:8px auto">
 
@@ -65,5 +70,7 @@
     
 
 </div>
+ </div>
+
 
 {% endblock %}

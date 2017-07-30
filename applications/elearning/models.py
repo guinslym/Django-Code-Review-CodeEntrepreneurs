@@ -79,7 +79,7 @@ class Register(TimeStampedModel, models.Model):
         verbose_name = 'Register'
         verbose_name_plural = 'Registrations'
 
-    @staticmethod
+    @property
     def student_alregistered(self, user):
         return Register.objects.create(
             course= self,
@@ -102,7 +102,7 @@ class UserProfile(TimeStampedModel, models.Model):
     nickname = models.CharField(max_length=50, blank=False)
     firstname = models.CharField(max_length=50, blank=False)
     lastname = models.CharField(max_length=50, blank=False)
-    bio = models.TextField(null=False, blank=False)
+    bio = models.TextField()
     slug = models.SlugField()
     mobile = models.TextField(default='Your Mobile Phone Number')
     address = models.TextField(default='Your Address', null=False, blank=False)
@@ -110,6 +110,15 @@ class UserProfile(TimeStampedModel, models.Model):
     
     def __str__(self):
         return str(self.id)
+
+    def __repr__(self):
+        return 'id\t\t:{}\nfullname\t:{}, {}'.format(
+            self.id, self.firstname, self.lastname
+            )
+
+    @property
+    def fullname(self):
+        return (self.firstname + ", " + self.lastname)
 
     def get_absolute_url(self):
         return reverse('elearning:userprofile_detail', args=(self.id,))

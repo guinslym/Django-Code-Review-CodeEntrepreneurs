@@ -1,13 +1,15 @@
 Steps:
  ✔ Frontend to do @done (17-07-30 04:07)
  ☐ Frontend
-   ☐ Detail
-   ☐ Userprofile.detail
+   ✔ Detail @done (17-07-30 04:46)
+   ✔ fullname @done (17-07-30 04:51)
+   ✔ Userprofile.detail @done (17-07-30 04:51)
+   ✔ Add messages in frontend @done (17-07-30 04:59)
    ☐ Course pagination (Add pagination)
-   ☐ Add messages in frontend
    ☐ Add a video when the user is entering the courses that it payed
    ☐ Prefetch/Select related mixin
    ☐ Add django-vote
+   ☐ Check wireframe to see if it's good
  ☐ Templatetags registration (kind of templatetags see Django By Example)
  ☐ Constraint Register to my own course
  ☐ Constraint user Create course with the same title (Your Course Already Exist)

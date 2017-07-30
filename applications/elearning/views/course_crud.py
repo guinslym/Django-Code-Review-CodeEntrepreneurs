@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 
 # Standard Python module
 from json import dumps, loads
@@ -108,6 +108,13 @@ class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         #migh need to remove that line
         #self.object.author = self.request.user
         return super(self.__class__, self).form_valid(form)
+
+    def get_success_url(self):
+            if 'slug' in self.kwargs:
+                slug = self.kwargs['slug']
+            else:
+                slug = 'demo'
+            return reverse('elearning:course_detail', kwargs={'slug': slug})
 
 product_update = login_required(CourseUpdateView.as_view())
 
