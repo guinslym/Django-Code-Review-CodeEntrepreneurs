@@ -43,12 +43,12 @@ class TimeStampedModel(models.Model):
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
-def unique_slug_generator(instance, title):
+def unique_slug_generator(instance, my_chosen_field):
     """
     This is for a Django project and it assumes your instance 
     has a model with a slug field and a title character (char) field.
     """
-    slug = slugify(title)
+    slug = slugify(my_chosen_field)
 
     Klass = instance.__class__
     qs_exists = Klass.objects.filter(slug=slug).exists()

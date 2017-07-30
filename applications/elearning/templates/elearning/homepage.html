@@ -28,13 +28,14 @@
               <div class="category">Catagories</div>
               -->
               <h1 class="title">
-                <a href="{% url 'elearning:course_detail' course.id %}">
+                <a href="{% url 'elearning:course_detail' course.slug %}">
                   {{ course.title }}
                 </a>
               </h1>
               <h2 class="sub_title">by 
-              <a href="{% url 'elearning:userprofile_detail' course.author.id %}">
-                              {{ course.author.username }}
+              <a href="{% url 'elearning:userprofile_detail' course.author.profile.slug %}">
+                              {{ course.author.profile.firstname }}, 
+                              {{ course.author.profile.lastname }}
               </a>
               </h2>
               <p>

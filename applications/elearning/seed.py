@@ -44,6 +44,13 @@ for user in users:
 courses = Course.objects.all()
 for i in courses:
 	i.title = title()
-	i.slug = "CodeReview-" + random_string_generator() + "-" + slugify(i.title) 
+	i.slug = "CodeReview-" + random_string_generator(size=10) + "-" + slugify(i.title) 
 	i.save()
 	print("{} - {}".format(i.title , i.slug))
+
+
+courses = UserProfile.objects.all()
+for i in courses:
+	i.slug = "CodeReview-User-" + random_string_generator(size=6) + "-" + slugify(i.firstname+"-"+i.lastname) 
+	i.save()
+	print("{} - {} - {}".format(i.firstname, i.lastname, i.slug))

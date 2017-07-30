@@ -57,7 +57,7 @@ class Course(TimeStampedModel, VoteModel, models.Model):
             )
 
     def get_absolute_url(self):
-        return reverse('elearning:course_detail', args=(self.id,))
+        return reverse('elearning:course_detail', args=(self.slug,))
 
     def get_authors(self):
         if self.authors:
@@ -100,7 +100,10 @@ class Comment(TimeStampedModel, models.Model):
 class UserProfile(TimeStampedModel, models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     nickname = models.CharField(max_length=50, blank=False)
+    firstname = models.CharField(max_length=50, blank=False)
+    lastname = models.CharField(max_length=50, blank=False)
     bio = models.TextField(null=False, blank=False)
+    slug = models.SlugField()
     mobile = models.TextField(default='Your Mobile Phone Number')
     address = models.TextField(default='Your Address', null=False, blank=False)
     userpicture = models.ImageField(upload_to="my_profile/%Y/%m/%d", null=False, blank=False)
@@ -129,9 +132,16 @@ class Location(TimeStampedModel, models.Model):
         verbose_name_plural = 'Locations'
 
 
-def rl_pre_save_receiver(sender, instance, *args, **kwargs):
+def course_pre_save_receiver(sender, instance, *args, **kwargs):
     instance.title = instance.title.capitalize()
     if not instance.slug:
         instance.slug = unique_slug_generator(instance, instance.title)
 
-pre_save.connect(rl_pre_save_receiver, sender=Course)
+def userprofile_pre_save_receiver(sender, instance, *args, **kwargs):
+    instance.nickname = instance.nickname.capitalize()
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance, instance.nickname)
+
+
+pre_save.connect(course_pre_save_receiver, sender=Course)
+pre_save.connect(userprofile_pre_save_receiver, sender=UserProfile)

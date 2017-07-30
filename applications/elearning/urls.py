@@ -15,7 +15,7 @@ urlpatterns = [
    #courses
    url(r'^course_create/$', views.CourseCreateView.as_view(), name='course_create'),
    url(r'^course_update/(?P<pk>\d+)/$', views.CourseUpdateView.as_view(), name='course_update'),
-   url(r'^course_detail/(?P<pk>\d+)/$', views.CourseDetailView.as_view(), name='course_detail'),
+   url(r'^course_detail/(?P<slug>[-\w]{1,255})/$', views.CourseDetailView.as_view(), name='course_detail'),
    url(r'^course_delete/(?P<pk>\d+)/$', views.CourseDeleteView.as_view(), name='course_delete'),
    url(r'^$', views.CourseListView.as_view(), name='courses_home'),
    url(r'^$', views.CourseListView.as_view(), name='index'),
@@ -27,7 +27,7 @@ urlpatterns = [
    #userprofile
    url(r'^userprofile_list/$', userprofile.UserProfileListView.as_view(), name='userprofile_list'),
    url(r'^userprofile_update/(?P<pk>\d+)/$', userprofile.UserProfileUpdateView.as_view(), name='userprofile_update'),
-   url(r'^userprofile_detail/(?P<pk>\d+)/$', userprofile.UserProfileDetailView.as_view(), name='userprofile_detail'),
+   url(r'^userprofile_detail/(?P<slug>[-\w]{1,255})/$', userprofile.UserProfileDetailView.as_view(), name='userprofile_detail'),
    url(r'^userprofile_delete/(?P<pk>\d+)/$', userprofile.UserProfileDeleteView.as_view(), name='userprofile_delete'),
 
       #url(r'^(?P<pk>[0-9]+)/$', views.CourseDetailView.as_view(), name='course-detail'),
