@@ -1,6 +1,13 @@
 Steps:
- ☐ Frontend to do
- ☐ Add messages in frontend
+ ✔ Frontend to do @done (17-07-30 04:07)
+ ☐ Frontend
+   ☐ Detail
+   ☐ Userprofile.detail
+   ☐ Course pagination (Add pagination)
+   ☐ Add messages in frontend
+   ☐ Add a video when the user is entering the courses that it payed
+   ☐ Prefetch/Select related mixin
+   ☐ Add django-vote
  ☐ Templatetags registration (kind of templatetags see Django By Example)
  ☐ Constraint Register to my own course
  ☐ Constraint user Create course with the same title (Your Course Already Exist)
@@ -8,16 +15,13 @@ Steps:
  ☐ Comment - Delete - Postpone
  ☐ Payments --- user (Fake payments system)
  ☐ BankAccount
- ☐ Access to the Tutorial/courses page only if you payed ()
- ☐ Add a video when the user is entering the courses that it payed
  ☐ Test the app (functionnal programming)
+ ☐ Access to the Tutorial/courses page only if you payed ()
  ☐ Do a MVP test (TDD)
  ☐ Do a MVP (frontend) --- real basic
  ☐ add license
- ☐ Add custom slug
- ☐ Prefetch/Select related mixin
+ ✔ Add custom slug @done (17-07-30 04:14)
  ☐ https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/
- ☐ Add django-vote
  ☐ Add relationship
  ☐ <i class="fa fa-eye" aria-hidden="true"></i>
  ☐ Superuser admin@gmail.com famille
