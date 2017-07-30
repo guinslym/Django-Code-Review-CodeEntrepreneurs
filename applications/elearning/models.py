@@ -15,6 +15,10 @@ from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator, RegexValidator
 from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils.text import slugify
+from django.db.models.signals import pre_save, post_save
+
+from utils.models_utils import unique_slug_generator
 
 #other package
 from vote.models import VoteModel
@@ -34,8 +38,7 @@ class Course(TimeStampedModel, VoteModel, models.Model):
                             max_length=15, 
                             help_text='title of the course', 
                             blank=False, verbose_name='title')
-    slug                = models.CharField(
-                            max_length=220)
+    slug                = models.SlugField()
     price               = models.DecimalField(
                             max_digits=16, decimal_places=2, default=5)
     number_of_minutes   = models.PositiveIntegerField(
@@ -46,7 +49,12 @@ class Course(TimeStampedModel, VoteModel, models.Model):
         )
 
     def __str__(self):
-        return str(self.id)
+        return str(self.title)
+
+    def __repr__(self):
+        return 'id\t\t:{}\ntitle\t\t:{}\nslug\t\t:{}\nshortdesc\t:{}'.format(
+            self.id, self.title ,self.slug, self.shortdesc[:5]
+            )
 
     def get_absolute_url(self):
         return reverse('elearning:course_detail', args=(self.id,))
@@ -119,3 +127,11 @@ class Location(TimeStampedModel, models.Model):
         #ordering = ("?",)
         verbose_name = 'Location'
         verbose_name_plural = 'Locations'
+
+
+def rl_pre_save_receiver(sender, instance, *args, **kwargs):
+    instance.title = instance.title.capitalize()
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance, instance.title)
+
+pre_save.connect(rl_pre_save_receiver, sender=Course)

@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import now
+from django.utils.text import slugify
+import random
+import string
 
 #model_utils.models
 
@@ -36,3 +39,23 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
+
+def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+def unique_slug_generator(instance, title):
+    """
+    This is for a Django project and it assumes your instance 
+    has a model with a slug field and a title character (char) field.
+    """
+    slug = slugify(title)
+
+    Klass = instance.__class__
+    qs_exists = Klass.objects.filter(slug=slug).exists()
+    if qs_exists:
+        new_slug = "CodeReview-{slug}-{randstr}".format(
+                    slug=slug,
+                    randstr=random_string_generator(size=10)
+                )
+        return unique_slug_generator(instance, new_slug=new_slug)
+    return slug
