@@ -1,28 +1,14 @@
 Steps:
- ✔ Frontend to do @done (17-07-30 04:07)
  ☐ Frontend
-   ✔ Detail @done (17-07-30 04:46)
-   ✔ fullname @done (17-07-30 04:51)
-   ✔ Userprofile.detail @done (17-07-30 04:51)
-   ✔ Add messages in frontend @done (17-07-30 04:59)
-   ✔ Course pagination (Add pagination) @done (17-07-30 05:05)
-   ✔ Add a video when the user is entering the courses that it payed @done (17-07-30 05:22)
-   ✔ Prefetch/Select related mixin @done (17-07-30 05:44)
    ☐ Add django-vote
    ☐ Check wireframe to see if it's good
  ☐ Templatetags registration (kind of templatetags see Django By Example)
  ☐ Constraint Register to my own course
  ☐ Constraint user Create course with the same title (Your Course Already Exist)
- ☐ Comment - Create - Postpone
- ☐ Comment - Delete - Postpone
- ☐ Payments --- user (Fake payments system)
  ☐ BankAccount
- ☐ Test the app (functionnal programming)
+ ☐ Payments --- user (Fake payments system)
  ☐ Access to the Tutorial/courses page only if you payed ()
- ✔ Do a MVP test (TDD) @done (17-07-30 05:44)
- ✔ Do a MVP (frontend) --- real basic @done (17-07-30 05:44)
  ☐ add license
- ✔ Add custom slug @done (17-07-30 04:14)
  ☐ https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/
  ☐ Add relationship
  ☐ <i class="fa fa-eye" aria-hidden="true"></i>
@@ -48,6 +34,20 @@ helps:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Test the app (functionnal programming) @done (17-07-30 05:45) @project(Steps)
+ ✔ Comment - Delete - Postpone @done (17-07-30 05:45) @project(Steps)
+ ✔ Comment - Create - Postpone @done (17-07-30 05:45) @project(Steps)
+ ✔ Prefetch/Select related mixin @done (17-07-30 05:44) @project(Steps)
+ ✔ Do a MVP test (TDD) @done (17-07-30 05:44) @project(Steps)
+ ✔ Do a MVP (frontend) --- real basic @done (17-07-30 05:44) @project(Steps)
+ ✔ Add a video when the user is entering the courses that it payed @done (17-07-30 05:22) @project(Steps)
+ ✔ Course pagination (Add pagination) @done (17-07-30 05:05) @project(Steps)
+ ✔ Add messages in frontend @done (17-07-30 04:59) @project(Steps)
+ ✔ fullname @done (17-07-30 04:51) @project(Steps)
+ ✔ Userprofile.detail @done (17-07-30 04:51) @project(Steps)
+ ✔ Detail @done (17-07-30 04:46) @project(Steps)
+ ✔ Add custom slug @done (17-07-30 04:14) @project(Steps)
+ ✔ Frontend to do @done (17-07-30 04:07) @project(Steps)
  ✔ Continue with the Frontend (integration of the Wireframe) finish it. MVP @done (17-07-29 07:15) @project(Steps)
  ✔ Footer @done (17-07-29 07:14) @project(Steps)
  ✔ Remove Categories @done (17-07-29 07:13) @project(Steps)
