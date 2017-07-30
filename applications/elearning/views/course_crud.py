@@ -62,7 +62,7 @@ from applications.elearning.forms import CourseForm
 class CourseListView(LoginRequiredMixin, ListView):
 
     model = Course
-    paginate_by = 5
+    paginate_by = 10
     template_name = 'elearning/homepage.html'
 
     def get_context_data(self, **kwargs):
@@ -86,7 +86,7 @@ product_detail = CourseDetailView.as_view()
 class AdminCourseListView(LoginRequiredMixin, ListView):
 
     model = Course
-    paginate_by = 5
+    paginate_by = 6
     template_name = 'elearning/homepage.html'
 
     def get_context_data(self, **kwargs):

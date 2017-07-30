@@ -48,6 +48,7 @@ courses = Course.objects.all()
 for i in courses:
 	i.title = title()
 	i.slug = "CodeReview-" + random_string_generator(size=10) + "-" + slugify(i.title) 
+	i.shortdesc = fake.text(300)
 	i.save()
 	print("{} - {}".format(i.title , i.slug))
 

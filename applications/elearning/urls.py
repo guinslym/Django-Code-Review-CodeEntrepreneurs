@@ -30,6 +30,8 @@ urlpatterns = [
    url(r'^userprofile_detail/(?P<slug>[-\w]{1,255})/$', userprofile.UserProfileDetailView.as_view(), name='userprofile_detail'),
    url(r'^userprofile_delete/(?P<pk>\d+)/$', userprofile.UserProfileDeleteView.as_view(), name='userprofile_delete'),
 
+
+   url(r'^show_video/$', gviews.ShowVideoTemplateView.as_view(), name='show_video'),
       #url(r'^(?P<pk>[0-9]+)/$', views.CourseDetailView.as_view(), name='course-detail'),
 
       # url(r'^$', views.HomeView.as_view(), name='index'),

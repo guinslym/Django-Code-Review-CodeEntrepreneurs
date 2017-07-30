@@ -5,8 +5,8 @@ Steps:
    ✔ fullname @done (17-07-30 04:51)
    ✔ Userprofile.detail @done (17-07-30 04:51)
    ✔ Add messages in frontend @done (17-07-30 04:59)
-   ☐ Course pagination (Add pagination)
-   ☐ Add a video when the user is entering the courses that it payed
+   ✔ Course pagination (Add pagination) @done (17-07-30 05:05)
+   ✔ Add a video when the user is entering the courses that it payed @done (17-07-30 05:22)
    ☐ Prefetch/Select related mixin
    ☐ Add django-vote
    ☐ Check wireframe to see if it's good

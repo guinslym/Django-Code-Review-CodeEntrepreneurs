@@ -1,5 +1,6 @@
 {% extends "elearning/base.html" %}
 {% load humanize %}
+{% load bootstrap_pagination %}
 
   {% block content %}
 
@@ -9,6 +10,10 @@
 <div class="container">
 <div class="row text-center">
   <h1>Courses</h1>
+</div>
+
+<div class="row text-center">
+   {% bootstrap_paginate page_obj %}
 </div>
 
 <div class="row">
@@ -69,7 +74,7 @@
     </div>
 
 <div class="row text-center">
-  <h1>More Courses</h1>
+   {% bootstrap_paginate page_obj %}
 </div>
 
 </div>
