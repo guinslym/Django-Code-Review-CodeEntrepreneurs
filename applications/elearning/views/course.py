@@ -59,6 +59,7 @@ from django.contrib.auth.models import User
 from applications.elearning.forms import CourseForm
 from braces.views import PrefetchRelatedMixin
 from braces.views import SelectRelatedMixin
+from hitcount.views import HitCountDetailView
 
 #http://localhost:8001/
 class CourseListView(LoginRequiredMixin, ListView):
@@ -75,10 +76,11 @@ class CourseListView(LoginRequiredMixin, ListView):
         return context
 
 #http://localhost:8001/
-class CourseDetailView(LoginRequiredMixin, DetailView):
+class CourseDetailView(LoginRequiredMixin, HitCountDetailView, DetailView):
     model = Course
     template_name = 'elearning/course_detail.html'
     prefetch_related = ['course_set__user']
+    count_hit = True    # set to True if you want it to try and count the hit
 
     def get_context_data(self, **kwargs):
         context = super(CourseDetailView, self).get_context_data(**kwargs)

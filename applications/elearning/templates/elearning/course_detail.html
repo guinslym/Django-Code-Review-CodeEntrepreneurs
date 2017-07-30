@@ -2,13 +2,31 @@
 {% load humanize %}
 {% load static %}
 {% load registration %}
+{% load hitcount_tags %}
 
   {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 
 <div class="jumbotron">
   <h1>Detail</h1>
 </div>
 <div class="container">
+
+<style>
+  .vote{
+    display: block;
+  }
+  form{
+    maring:0;
+  }
+  .fa-thumbs-o-up, .fa-thumbs-o-down:hover{
+  color:blue;
+  }
+  .fa-thumbs-o-down, .fa-thumbs-o-up:hover{
+  color:red;
+  }
+</style>
 
 <div class="row">
 
@@ -36,27 +54,38 @@
                               {{ course.author.profile.fullname }}
               </a>
               </h2>
-              <p>
-                $ {{ object.price }} <br>
-                 {{ object.number_of_minutes }} <br>
-              </p>
+              <span class="price">$ {{ object.price }}</span>
+              <span class="minutes">{{ object.number_of_minutes }}</span>
 
               <div class="post-meta">
-                <span class="timestamp">
-                  <i class="fa fa-clock-">o</i> 6 mins ago
-                </span>
+              <!--
                 <span class="comments">
                   <i class="fa fa-comments"></i>
                   <a href="#"> 39 comments</a>
                 </span>
+              -->
                 <span class="comments" style="padding-left:10px">
-                  <i class="fa fa-thumbs-o-up"></i>
-                   9
+                
+                <form class="right vote" method="POST" action="{% url 'voteUpOrDown' object.slug %}">
+                <span class="timestamp">
+                  <i class="fa fa-clock-">o</i> {{ object.created|naturaltime }}
                 </span>
-                <span class="comments" style="padding-left:10px">
-                  <i class="fa fa-thumbs-o-down"></i>
-                   3
+                {% csrf_token %}
+                <input type="hidden" name="vote" value="val" />
+                <a href="#" onclick="this.parentNode.submit()">
+                  
+                  <i class="fa fa-2x {% has_voted object.slug request.user %}"></i>
+                   <!--
+                   {% total_vote object.slug %}
+                   -->
+                </a>
+                </form>
+
                 </span>
+
+
+{% if request.user == object.author  %}
+
 
       <table class="table">
         <tr>
@@ -74,18 +103,24 @@
         </tr>
       </table>
 
+
+{% else %}
+
+
       <table class="table">
         <tr>
           <td>
-          <form class="right" method="POST" action="{% url 'register_and_unregister_create' object.id %}">
+          <form class="right" method="POST" action="{% url 'register_and_unregister_create' object.slug %}">
          {% csrf_token %}
          <input type="hidden" name="course_id" value="{{object.id}}">
-         <input class="btn btn-primary red darken-2" type="submit" value="Register">
+         <input class="btn btn-primary btn-sm red darken-2" type="submit" value="{% is_registered object.slug  request.user %}">
       </form>  
           </td>
         </tr>
       </table>
 
+
+{% endif %}
               </div>
             </div>
           </div>
@@ -95,10 +130,20 @@
       <div class="col-lg-8">
           <h1>Description</h1>
           <p>{{object.shortdesc}}</p>
+          <span><strong>Total Number of votes</strong>: 
+                   {% total_vote object.slug %}
+                   </span>
+                   <br>
+          <span><strong>Total Number of user that have clicked on this course page:</strong>
+                   {% get_hit_count for object %}
+                   </span>
+                   <br>
+          
           <a href="{% url 'elearning:show_video' %}">
           <button class="btn btn-primary">Go and wath this course</button>
           </a>
       </div>
+
 
 
     </div>

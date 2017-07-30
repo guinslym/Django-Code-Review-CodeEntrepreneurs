@@ -42,10 +42,8 @@
                               {{ course.author.profile.fullname }}
               </a>
               </h2>
-              <p>
-                $ {{ course.price }} <br>
-                 {{ course.number_of_minutes }} <br>
-              </p>
+              <span class="price">$ {{ object.price }}</span>
+              <span class="minutes">{{ object.number_of_minutes }}</span>
 
               <div class="post-meta">
                 <span class="timestamp">

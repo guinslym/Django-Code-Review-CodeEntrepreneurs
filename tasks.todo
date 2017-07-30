@@ -1,13 +1,19 @@
 Steps:
  ☐ Frontend
-   ☐ Add django-vote
-   ☐ Check wireframe to see if it's good
- ☐ Templatetags registration (kind of templatetags see Django By Example)
- ☐ Constraint Register to my own course
- ☐ Constraint user Create course with the same title (Your Course Already Exist)
+   ✔ Add django-vote @done (17-07-30 08:12)
+   ✔ django-hitcount @done (17-07-30 08:12)
+   ✔ Check wireframe to see if it's good @done (17-07-30 08:12)
+   ✔ 5$ et minutes to customize @done (17-07-30 07:16)
+   ☐ homepage frontend add  like Detailpage (#minutes. timeago. Like button with TemplateTags)
+   ☐ Go and watch this course (payment check and if registered)
+   ☐ Payment
+   ☐ Dashboard - Create a course - View my votes
+ ✔ Templatetags registration (kind of templatetags see Django By Example) @done (17-07-30 08:14)
+ ✔ Constraint Register to my own course @done (17-07-30 08:14)
+ ✔ Constraint user Create course with the same title (Your Course Already Exist) @done (17-07-30 08:14)
  ☐ BankAccount
  ☐ Payments --- user (Fake payments system)
- ☐ Access to the Tutorial/courses page only if you payed ()
+ ✔ Access to the Tutorial/courses page only if you payed () @done (17-07-30 08:14)
  ☐ add license
  ☐ https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/
  ☐ Add relationship

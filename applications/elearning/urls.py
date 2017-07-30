@@ -4,9 +4,10 @@ from django.conf.urls import url, include
 from . import views
 from django.views import generic
 from django.views.decorators.cache import cache_page
-from applications.elearning.views import course_crud as views
-from applications.elearning.views import profile_rud as userprofile
-from applications.elearning.views import register_crd as register
+from applications.elearning.views import course as views
+from applications.elearning.views import profile as userprofile
+from applications.elearning.views import register as register
+from applications.elearning.views import vote 
 from applications.elearning.views import views_general as gviews
 __author__ = 'Guinsly'
 
@@ -22,8 +23,9 @@ urlpatterns = [
 
    #Register
    url(r'^register_list/$', register.RegisterListView.as_view(), name='register_list'),
-   url(r'^RegisterAndUnRegister/(?P<pk>\d+)/$', register.RegisterAndUnRegister.as_view(), name='register_and_unregister_create'),
-   
+   url(r'^RegisterAndUnRegister/(?P<slug>[-\w]{1,255})/$', register.RegisterAndUnRegister.as_view(), name='register_and_unregister_create'),
+   #voteUpOrDown
+   url(r'^voteUpOrDown/(?P<slug>[-\w]{1,255})/$', vote.VoteUpOrDownView.as_view(), name='voteUpOrDown'),
    #userprofile
    url(r'^userprofile_list/$', userprofile.UserProfileListView.as_view(), name='userprofile_list'),
    url(r'^userprofile_update/(?P<pk>\d+)/$', userprofile.UserProfileUpdateView.as_view(), name='userprofile_update'),

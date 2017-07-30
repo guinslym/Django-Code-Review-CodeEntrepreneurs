@@ -25,6 +25,13 @@
         -webkit-transform:rotate(360deg);  
         /*-webkit-font-smoothing:antialiased;*/
     }
+    .fa-linkedin-square{
+      display: block;
+    }
+    .fa-linkedin-square:hover{
+      color: red;
+    }
+
  </style>
  <div class="container">
  <div class="row text-center">
@@ -40,13 +47,14 @@
             </a>
             <div class="media-body">
                 <h4 class="media-heading">{{ object.fullname}} <small> Haiti</small></h4>
-                <h5>{{object.bio}} <a href="http://gridle.in">Gridle.in</a></h5>
+                <h5>{{object.bio}} <a href="https://www.linkedin.com/in/guinsly-mondesir/" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></h5>
                 <hr style="margin:8px auto">
 
                 <span class="label label-default">{{object.address}}</span>
                 <span class="label label-default">{{object.mobile}}</span>
             </div>
 
+{% if request.user == object.author  %}
 
                   <table class="table">
         <tr>
@@ -60,6 +68,8 @@
           </td>
         </tr>
       </table>
+
+{% endif %}
 
 
 

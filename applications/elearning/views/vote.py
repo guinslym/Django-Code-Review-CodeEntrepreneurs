@@ -56,31 +56,17 @@ from django.contrib.auth.models import User
 from applications.elearning.forms import CourseForm
 
 #http://localhost:8001/
-class RegisterListView(LoginRequiredMixin, ListView):
 
-    model = Register
-    template_name = 'course_registration/homepage.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(RegisterListView, self).get_context_data(**kwargs)
-        context['now'] = timezone.now()
-        return context
-
-class RegisterAndUnRegister(LoginRequiredMixin, View):
+class VoteUpOrDownView(LoginRequiredMixin, View):
 
     def post(self, request, *args, **kwargs):
-        course = get_object_or_404( Course, pk=int(kwargs['pk']) )
-        user_is_registered = Register.objects.filter(course=course, student=request.user)
-        import pdb; pdb.set_trace()
-        if not user_is_registered:
-            Register.objects.create(
-            course= course,
-            student= request.user
-            )
-            messages.success("Congrats!!! Registered to this course")
-            return redirect(reverse('elearning:course_detail',kwargs={'pk':int(kwargs['pk'])}))
+        course = get_object_or_404(Course, slug=kwargs['slug'] )
+        user_id = request.user.id
+        #import ipdb; ipdb.set_trace()
+        if course in Course.votes.all(user_id):
+            course.votes.delete(user_id)
+            return redirect(reverse('elearning:course_detail',kwargs={'slug':kwargs['slug']}))
         else:
-            user_is_registered.delete()
-            messages.error("You are Unregistered to this course")
-            return redirect(reverse('elearning:course_detail',kwargs={'pk':int(kwargs['pk'])}))
-
+            course.votes.up(user_id)
+            return redirect(reverse('elearning:course_detail',kwargs={'slug':kwargs['slug']}))
+        reg = Register.objects.filter(course=course, student=request.user)
