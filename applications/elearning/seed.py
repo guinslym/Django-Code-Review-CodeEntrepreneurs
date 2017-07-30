@@ -1,3 +1,10 @@
+"""
+	only for seeding the database
+
+	COPY-And-PASTE to shell
+	python manage.py shell_plus
+"""
+
 from applications.elearning.models import Course
 from applications.elearning.models import Register
 from applications.elearning.models import Comment
