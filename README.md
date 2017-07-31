@@ -62,6 +62,10 @@ C:.
 +---TODO-wireframe-ERD
 +---utils
 ```
+	**application**: contains all the applications (in this case only contains one app called elearning)
+	**requirements**: contains my requirements
+	**requirements**: contains my requirements
+	**requirements**: contains my requirements
 	**requirements**: contains my requirements
 
 
