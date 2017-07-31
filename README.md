@@ -52,7 +52,6 @@ C:.
 |   |   +---utils
 |   |   +---views
 +---fixtures
-+---htmlcov
 +---logs
 +---main
 +---media
@@ -61,12 +60,19 @@ C:.
 +---static
 +---TODO-wireframe-ERD
 +---utils
+
+The most important folder are **main** and **settings**
+
 ```
 	**application**: contains all the applications (in this case only contains one app called elearning)
+	**fixtures**: may or may not contains my fixtures
+	**logs**: contains my logs
+	**main**: THIS IS THE PROJECT FOLDER
+	**media**: contains my media files
 	**requirements**: contains my requirements
-	**requirements**: contains my requirements
-	**requirements**: contains my requirements
-	**requirements**: contains my requirements
+	**settings**: CONTAINS MY SETTINGS FOR DIFFERENTS ENVIRONMENT
+	**static**: contains my static
+	**wireframe-erd-todo**: contains my todo wireframe
 
 
 ### User password
