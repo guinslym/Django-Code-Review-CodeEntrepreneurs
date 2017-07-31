@@ -1,4 +1,4 @@
-dev:
+wdev:
 	pip install -r requirements/development.txt
 
 git_alias:
