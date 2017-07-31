@@ -12,6 +12,7 @@ What do I want to learn:
  ☐ 8. Docker send email
  ☐ 9. signals
  ☐ 10. Generic foreign key
+ ☐ 11. User permissions ... i.e. article.can.update
 
 Scenario:
  ☐ A User can see all the course available

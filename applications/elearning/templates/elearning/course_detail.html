@@ -13,21 +13,6 @@
 </div>
 <div class="container">
 
-<style>
-  .vote{
-    display: block;
-  }
-  form{
-    maring:0;
-  }
-  .fa-thumbs-o-up, .fa-thumbs-o-down:hover{
-  color:blue;
-  }
-  .fa-thumbs-o-down, .fa-thumbs-o-up:hover{
-  color:red;
-  }
-</style>
-
 <div class="row">
 
       <div class="col-md-4">
@@ -139,8 +124,12 @@
                    </span>
                    <br>
           
-          <a href="{% url 'elearning:show_video' %}">
-          <button class="btn btn-primary">Go and wath this course</button>
+
+                    <form class="right" method="POST" action="{% url 'elearning:show_video' object.slug %}">
+                     {% csrf_token %}
+                     <input class="btn btn-primary btn-sm red darken-2" type="submit" value="Go and watch this course">
+                  </form> 
+
           </a>
       </div>
 

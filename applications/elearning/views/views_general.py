@@ -17,7 +17,7 @@ from django.views.generic.base import TemplateView
 from braces.views import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 
-from applications.elearning.models import BankAccount, UserProfile
+from applications.elearning.models import BankAccount, UserProfile, Register
 from django.core.urlresolvers import reverse, reverse_lazy
 
 #create fake userProfile
@@ -50,9 +50,26 @@ class DashBoard(LoginRequiredMixin, TemplateView):
 
         return context
 
-class ShowVideoTemplateView(LoginRequiredMixin, TemplateView):
+class ShowVideoTemplateView(LoginRequiredMixin, View):
 
     template_name = 'elearning/show_course_video.html'
+
+    def post(self, request, *args, **kwargs):
+        #get the user
+        user = request.user
+        import ipdb; ipdb.set_trace()
+
+        #get the course
+
+        #is this user alredy register to this course
+        #render the view
+
+        #Does the user has enough money for this course
+        bank = BankAccount.objects.filter(user=user).get()
+
+        #render a error message and redirect to dashboard
+
+        return redirect(reverse('elearning:dashboard'))
 
 
 class AddMoneyIntoAccount(LoginRequiredMixin, View):

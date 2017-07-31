@@ -2,9 +2,10 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from .models import UserProfile
 
-#https://github.com/search?utf8=%E2%9C%93&q=language%3Apython+post_save+profile&type=Code
-
-
+"""
+TODO: this doen't work 
+purpose : create a profile when the user just SignUp
+"""
 def create_profile(sender, **kwargs):
 	""" Create a profile on post_save signal of User object. """
 	user = kwargs["instance"]
