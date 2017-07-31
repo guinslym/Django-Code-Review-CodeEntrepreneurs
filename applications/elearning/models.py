@@ -52,7 +52,7 @@ class Course(TimeStampedModel, VoteModel, models.Model):
         return str(self.title)
 
     def __repr__(self):
-        return 'id\t\t:{}\ntitle\t\t:{}\nslug\t\t:{}\nshortdesc\t:{}'.format(
+        return '\nid\t\t:{}\ntitle\t\t:{}\nslug\t\t:{}\nshortdesc\t:{}\n'.format(
             self.id, self.title ,self.slug, self.shortdesc[:5]
             )
 
@@ -112,7 +112,7 @@ class UserProfile(TimeStampedModel, models.Model):
         return str(self.id)
 
     def __repr__(self):
-        return 'id\t\t:{}\nfullname\t:{}, {}'.format(
+        return '\nid\t\t:{}\nfullname\t:{}, {}\n'.format(
             self.id, self.firstname, self.lastname
             )
 
@@ -139,6 +139,30 @@ class Location(TimeStampedModel, models.Model):
         #ordering = ("?",)
         verbose_name = 'Location'
         verbose_name_plural = 'Locations'
+
+
+class BankAccount(TimeStampedModel, models.Model):
+    user =  models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='bank')
+    balance = models.DecimalField(
+                            max_digits=16, 
+                            decimal_places=2, 
+                            default=5)
+    def __str__(self):
+        return str(self.id)
+
+    def __repr__(self):
+        return '\nid\t\t:{}\nbalance\t\t:$ {}\nusername\t:{}\n'.format(
+            self.id, self.balance, self.user.username
+            )
+
+    def get_absolute_url(self):
+        return reverse('elearning:bank_account_detail', args=(self.id,))
+
+    class Meta:
+        ordering = ["-created"]
+        #ordering = ("?",)
+        verbose_name = 'BankAcount'
+        verbose_name_plural = 'BankAccounts'
 
 
 def course_pre_save_receiver(sender, instance, *args, **kwargs):

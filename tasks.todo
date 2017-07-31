@@ -1,29 +1,19 @@
 Steps:
  ☐ Frontend
-   ✔ Add django-vote @done (17-07-30 08:12)
-   ✔ django-hitcount @done (17-07-30 08:12)
-   ✔ Check wireframe to see if it's good @done (17-07-30 08:12)
-   ✔ 5$ et minutes to customize @done (17-07-30 07:16)
-   ✔ homepage frontend add  like Detailpage (#minutes. timeago. Like button with TemplateTags ---) @done (17-07-31 02:49)
-   ☐ Go and watch this course (payment check and if registered --- Create a Mixin)
-   ☐ Payment
-   ☐ Try axios for Ajax button https://github.com/kumareshalfa/edocs-code/blob/710ff2ef9d82b3f74ce102c3792d1dfda6b4b2c5/anabond/views.py#L977 (ajax_url_code_review....)
-   ☐ Dashboard - Create a course - View my votes
+   ☐ Dashboard
+      ☐ Create Course
+      ☐ View My Votes
+      ☐ Add money into account
+      ☐ Friends
+      ☐ Navbar Money Amount
+   ☐ Course that a user gives
+   ☐ Go and watch this course (payment check and if registered --- Create a Mixin).
    ☐ On the profile (Protected) page create a table with __sections__ for Friendship (rejected_requests + sent_requests + unread_requests)
    ☐ Add flash message into the app so that I don't need to create another page
- ✔ Templatetags registration (kind of templatetags see Django By Example) @done (17-07-30 08:14)
- ✔ Constraint Register to my own course @done (17-07-30 08:14)
- ✔ Constraint user Create course with the same title (Your Course Already Exist) @done (17-07-30 08:14)
- ☐ BankAccount
- ☐ Payments --- user (Fake payments system)
- ✔ Access to the Tutorial/courses page only if you payed () @done (17-07-30 08:14)
- ☐ add license
- ☐ https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/
- ☐ Add relationship
- ☐ <i class="fa fa-eye" aria-hidden="true"></i>
  ☐ Superuser admin@gmail.com famille
  ☐ Django permission
  ☐ When finished review my goals and check other apps
+ ☐ add license
 
 Helper:
  ☐ Infinte scroll
@@ -43,6 +33,22 @@ helps:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/ @done (17-07-31 03:25) @project(Steps)
+ ✔ Payments --- user (Fake payments system) @done (17-07-31 03:25) @project(Steps)
+ ✔ Add relationship @done (17-07-31 03:25) @project(Steps)
+ ✔ <i class="fa fa-eye" aria-hidden="true"></i> @done (17-07-31 03:25) @project(Steps)
+ ✔ Payment @done (17-07-31 03:24) @project(Steps)
+ ✔ BankAccount @done (17-07-31 03:21) @project(Steps)
+ ✔ Try axios for Ajax button https://github.com/kumareshalfa/edocs-code/blob/710ff2ef9d82b3f74ce102c3792d1dfda6b4b2c5/anabond/views.py#L977 (ajax_url_code_review....) --- postpone @done (17-07-31 02:59) @project(Steps)
+ ✔ homepage frontend add  like Detailpage (#minutes. timeago. Like button with TemplateTags ---) @done (17-07-31 02:49) @project(Steps)
+ ✔ Templatetags registration (kind of templatetags see Django By Example) @done (17-07-30 08:14) @project(Steps)
+ ✔ Constraint user Create course with the same title (Your Course Already Exist) @done (17-07-30 08:14) @project(Steps)
+ ✔ Constraint Register to my own course @done (17-07-30 08:14) @project(Steps)
+ ✔ Access to the Tutorial/courses page only if you payed () @done (17-07-30 08:14) @project(Steps)
+ ✔ django-hitcount @done (17-07-30 08:12) @project(Steps)
+ ✔ Check wireframe to see if it's good @done (17-07-30 08:12) @project(Steps)
+ ✔ Add django-vote @done (17-07-30 08:12) @project(Steps)
+ ✔ 5$ et minutes to customize @done (17-07-30 07:16) @project(Steps)
  ✔ Test the app (functionnal programming) @done (17-07-30 05:45) @project(Steps)
  ✔ Comment - Delete - Postpone @done (17-07-30 05:45) @project(Steps)
  ✔ Comment - Create - Postpone @done (17-07-30 05:45) @project(Steps)

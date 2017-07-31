@@ -10,6 +10,7 @@ from applications.elearning.models import Register
 from applications.elearning.models import Comment
 from applications.elearning.models import UserProfile
 from applications.elearning.models import Location
+from applications.elearning.models import BankAccount
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from utils.models_utils import random_string_generator
@@ -46,11 +47,12 @@ mixer.cycle(60).blend(Register, course=mixer.SELECT, student=mixer.SELECT)
 mixer.cycle(60).blend(Comment, course=mixer.SELECT, author=mixer.SELECT)
 
 
+import random
 users = User.objects.all()
 for user in users:
-	mixer.blend(UserProfile, user=user)
-	mixer.blend(Location, user=user)
-
+	bank = mixer.blend(BankAccount, user=user)
+	bank.balance = random.randint(3,12)
+	bank.save()
 	
 courses = Course.objects.all()
 for i in courses:
