@@ -1,4 +1,4 @@
-###Code Review
+### Code Review
 This application will help users to choose a course. A user will be able to View all the courses available and is able to register to a course. 
 
 ### Installation
@@ -21,13 +21,13 @@ pip install -r requirements/development.txt
 
 Create a form:
 
-###User password
+### User password
 ```
 username:codereview
 password:okyoutube
 ````
 
-###Admin password
+### Admin password
 ```
 username:mycodereview
 password:okyoutube
