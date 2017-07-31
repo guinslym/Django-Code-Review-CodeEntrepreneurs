@@ -1,6 +1,7 @@
 {% extends "elearning/base.html" %}
 {% load humanize %}
 {% load bootstrap_pagination %}
+{% load hitcount_tags %}
 
   {% block content %}
 
@@ -47,7 +48,11 @@
 
               <div class="post-meta">
                 <span class="timestamp">
-                  <i class="fa fa-clock-">o</i> {{ course.created|naturaltime }}
+                  <i class="fa fa-clock-">o</i> {{ course.created|naturaltime }} 
+                </span>
+                <span class="comments hitcount">
+                  <i class="fa fa-eye"></i>
+                  <a href="#"> {% get_hit_count for course %}</a>
                 </span>
                 <!--
                 <span class="comments">

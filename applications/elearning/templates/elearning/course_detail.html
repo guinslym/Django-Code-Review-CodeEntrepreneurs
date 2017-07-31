@@ -9,7 +9,7 @@
 
 
 <div class="jumbotron">
-  <h1>Detail</h1>
+  <h1>{{ object.title }}</h1>
 </div>
 <div class="container">
 
@@ -68,7 +68,7 @@
                 
                 <form class="right vote" method="POST" action="{% url 'voteUpOrDown' object.slug %}">
                 <span class="timestamp">
-                  <i class="fa fa-clock-">o</i> {{ object.created|naturaltime }}
+                  <i class="fa fa-clock-o"></i> {{ object.created|naturaltime }}
                 </span>
                 {% csrf_token %}
                 <input type="hidden" name="vote" value="val" />
