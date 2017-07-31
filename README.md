@@ -21,7 +21,7 @@ pip install -r requirements/development.txt
 
 Create a form:
 
-###Admin password
+###User password
 ```
 username:codereview
 password:okyoutube
