@@ -30,6 +30,41 @@ Server
 python manage.py runserver
 ```
 
+## Project Folder
+```
+(django1_11) λ tree /A
+Folder PATH listing
+Volume serial number is 86FE-9FB3
+C:.
++---applications
+|   +---elearning
+|   |   +---migrations
+|   |   +---templates
+|   |   |   +---course_registration
+|   |   |   +---elearning
+|   |   |   +---friends
+|   |   |   +---robots_and_errors
+|   |   |   \---userprofile
+|   |   +---templatetags
+|   |   +---tests
+|   |   |   +---functionnal
+|   |   |   +---unittest
+|   |   +---utils
+|   |   +---views
++---fixtures
++---htmlcov
++---logs
++---main
++---media
++---requirements
++---settings
++---static
++---TODO-wireframe-ERD
++---utils
+```
+	-	**requirements**: contains my requirements
+
+
 ### User password
 ```
 username:codereview
