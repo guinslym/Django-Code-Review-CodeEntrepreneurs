@@ -98,7 +98,7 @@ class AdminCourseListView(LoginRequiredMixin, ListView):
     template_name = 'elearning/homepage.html'
 
     def get_context_data(self, **kwargs):
-        context = super(CourseListView, self).get_context_data(**kwargs)
+        context = super(AdminCourseListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
 
