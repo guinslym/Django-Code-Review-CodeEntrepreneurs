@@ -42,13 +42,14 @@
                               {{ course.author.profile.fullname }}
               </a>
               </h2>
-              <span class="price">$ {{ object.price }}</span>
-              <span class="minutes">{{ object.number_of_minutes }}</span>
+              <span class="price">$ {{ course.price }}</span>
+              <span class="minutes">{{ course.number_of_minutes }}</span>
 
               <div class="post-meta">
                 <span class="timestamp">
-                  <i class="fa fa-clock-">o</i> 6 mins ago
+                  <i class="fa fa-clock-">o</i> {{ course.created|naturaltime }}
                 </span>
+                <!--
                 <span class="comments">
                   <i class="fa fa-comments"></i>
                   <a href="#"> 39 comments</a>
@@ -61,6 +62,7 @@
                   <i class="fa fa-thumbs-o-down"></i>
                    3
                 </span>
+                -->
               </div>
             </div>
           </div>

@@ -38,7 +38,8 @@ mixer.cycle(15).blend(User)
 mixer.cycle(30).blend(
 	Course, author		=	mixer.SELECT, 
 	number_of_minutes	=	random.randint(1,9),
-	title 				=   title()
+	title 				=   title(),
+	price				=   random.randint(1,10),
 	)
 #bug here Mixer create way more users that I wanted
 mixer.cycle(60).blend(Register, course=mixer.SELECT, student=mixer.SELECT)
@@ -56,6 +57,8 @@ for i in courses:
 	i.title = title()
 	i.slug = "CodeReview-" + random_string_generator(size=10) + "-" + slugify(i.title) 
 	i.shortdesc = fake.text(300)
+	i.price = random.randint(1,10)
+	i.number_of_minutes = random.randint(18,59)
 	i.save()
 	print("{} - {}".format(i.title , i.slug))
 
@@ -66,5 +69,6 @@ for i in profiles:
 	i.bio = fake.text(300)
 	i.save()
 	print("{} - {} - {}".format(i.firstname, i.lastname, i.slug))
+
 
 

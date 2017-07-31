@@ -38,16 +38,16 @@ class ShowVideoTemplateView(LoginRequiredMixin, TemplateView):
 
 
 def robot_files(request, filename):
-    return render(request, 'elearning/'+filename, {}, content_type="text/plain")
+    return render(request, 'robots_and_errors/'+filename, {}, content_type="text/plain")
 
 def handler404(request):
-    response = render(request, 'elearning/page_not_found.html')
+    response = render(request, 'robots_and_errors/page_not_found.html')
     logger.info('Error page not found 404')
     response.status_code = 404
     return response
 
 def handler500(request):
-    response = render(request, 'elearning/server_error.html')
+    response = render(request, 'robots_and_errors/server_error.html')
     logger.info('Error page not found 500')
     response.status_code = 500
     return response
