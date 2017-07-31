@@ -33,6 +33,6 @@ pandas
 selenium
 django-webpack-loader
 pytest-ordering
-pytest-sugar
+#pytest-sugar
 django-debug-toolbar-template-profiler
 django-debug-toolbar-force

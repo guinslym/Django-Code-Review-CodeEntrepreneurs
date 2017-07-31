@@ -83,7 +83,7 @@
      {% for course in courses %}
      <tr>
        <td>
-        <a href="{% url 'course_detail' course.id %}">
+        <a href="{% url 'course_detail' course.slug %}">
           
          {{ course.title}}
 

@@ -16,6 +16,8 @@ django-vote==2.1.4
 django-friendship
 django-flat-theme
 django-hitcount
+django-flat-responsive
+djangorestframework
 
 # Unicode slugification
 awesome-slugify==1.6.5

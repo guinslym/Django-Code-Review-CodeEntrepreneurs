@@ -9,6 +9,7 @@ from applications.elearning.views import profile as userprofile
 from applications.elearning.views import register as register
 from applications.elearning.views import vote 
 from applications.elearning.views import general as gviews
+from applications.elearning.views import friends
 __author__ = 'Guinsly'
 
 
@@ -39,6 +40,7 @@ urlpatterns = [
       url(r'^dashboard/$', gviews.DashBoard.as_view(), name='dashboard'),
       url(r'^AddMoneyIntoAccount/$', gviews.AddMoneyIntoAccount.as_view(), name='add_money'),
 
+      url(r'^friends/$', friends.friendsView.as_view(), name='friends'),
         ]
 
 

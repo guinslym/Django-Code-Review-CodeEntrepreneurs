@@ -424,3 +424,7 @@ a.money_balance:hover, a.money_balance{
         -webkit-transform:rotate(360deg);  
         /*-webkit-font-smoothing:antialiased;*/
     }
+
+    ul.messages>li{
+      list-style: none;
+    }

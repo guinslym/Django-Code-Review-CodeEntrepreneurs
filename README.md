@@ -20,6 +20,16 @@ virtualenv django1_11 --python=/usr/local/bin/python3
 pip install -r requirements/development.txt --no-cache-dir
 ```
 
+Running Test
+```
+py.test
+```
+
+Server
+```
+python manage.py runserver
+```
+
 ### User password
 ```
 username:codereview

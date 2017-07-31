@@ -46,12 +46,20 @@ from django.views.decorators.cache import cache_page
 #logging
 import logging
 logger = logging.getLogger(__name__)
+
 #models
-from applications.elearning.models import Course
-from applications.elearning.models import Register
 from django.contrib.auth.models import User
+from friendship.models import Friend, Follow
 
 from applications.elearning.forms import CourseForm
 
+
 #http://localhost:8001/
 
+"""
+Create a view to see a list of Friends
+.. using django-friendship
+"""
+
+class friendsView(TemplateView):
+	template_name = 'friends/inbox.html'
