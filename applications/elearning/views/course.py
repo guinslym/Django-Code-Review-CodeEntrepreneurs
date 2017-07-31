@@ -65,7 +65,7 @@ from hitcount.views import HitCountDetailView
 class CourseListView(LoginRequiredMixin, ListView):
 
     model = Course
-    paginate_by = 10
+    paginate_by = 9
     template_name = 'elearning/homepage.html'
     #not sure about this next line
     prefetch_related = ['course_set__user', 'user_set_userprofile']
