@@ -37,7 +37,8 @@ urlpatterns = [
       #url(r'^(?P<pk>[0-9]+)/$', views.CourseDetailView.as_view(), name='course-detail'),
 
       # url(r'^$', views.HomeView.as_view(), name='index'),
-      url(r'^dashboard/$', gviews.DashBoard.as_view(), name='index'),
+      url(r'^dashboard/$', gviews.DashBoard.as_view(), name='dashboard'),
+      url(r'^AddMoneyIntoAccount/$', gviews.AddMoneyIntoAccount.as_view(), name='add_money'),
 
         ]
 

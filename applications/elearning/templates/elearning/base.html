@@ -260,6 +260,9 @@ footer{
             <li>
               <a href="/elearning/">Courses</a>
             </li>
+            <li>
+              <a href="{% url 'elearning:dashboard' %}">Dashboard</a>
+            </li>
             <!--
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Paper <span class="caret"></span></a>
@@ -282,7 +285,7 @@ footer{
     <div class="container">
       <div class="row text-center">
         {% if messages %}
-<ul class="messages">
+<ul class="messages"  style="margin-top: 50px;">
 {% for message in messages %}
     <li class="{{ message.tags }}">
     {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}

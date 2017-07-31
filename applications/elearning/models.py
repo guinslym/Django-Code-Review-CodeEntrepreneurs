@@ -17,6 +17,7 @@ from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.text import slugify
 from django.db.models.signals import pre_save, post_save
+from django.dispatch import receiver
 
 from utils.models_utils import unique_slug_generator
 
@@ -26,7 +27,8 @@ from vote.models import VoteModel
 from utils.models_utils import TimeStampedModel
 
 class Course(TimeStampedModel, VoteModel, models.Model):
-    author              = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='teacher')
+    author              = models.ForeignKey(
+        settings.AUTH_USER_MODEL, related_name='teacher')
     picture             = models.ImageField(upload_to='elearning/%Y/%m/%d',
                             help_text='Image of the course',
                             null=False, blank=False, verbose_name="pics")
@@ -71,7 +73,8 @@ class Course(TimeStampedModel, VoteModel, models.Model):
 
 class Register(TimeStampedModel, models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    student = models.ForeignKey(settings.AUTH_USER_MODEL, null=False, blank=False)
+    student = models.ForeignKey(
+        settings.AUTH_USER_MODEL, null=False, blank=False)
     
     class Meta:
         ordering = ["-created"]
@@ -98,7 +101,10 @@ class Comment(TimeStampedModel, models.Model):
         verbose_name_plural = 'Comments'
 
 class UserProfile(TimeStampedModel, models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, 
+        related_name='profile'
+        )
     nickname = models.CharField(max_length=50, blank=False)
     firstname = models.CharField(max_length=50, blank=False)
     lastname = models.CharField(max_length=50, blank=False)
@@ -121,7 +127,7 @@ class UserProfile(TimeStampedModel, models.Model):
         return (self.firstname + ", " + self.lastname)
 
     def get_absolute_url(self):
-        return reverse('elearning:userprofile_detail', args=(self.id,))
+        return reverse('elearning:userprofile_detail', args=(self.slug,))
 
     class Meta:
         ordering = ["-created"]
@@ -178,3 +184,4 @@ def userprofile_pre_save_receiver(sender, instance, *args, **kwargs):
 
 pre_save.connect(course_pre_save_receiver, sender=Course)
 pre_save.connect(userprofile_pre_save_receiver, sender=UserProfile)
+

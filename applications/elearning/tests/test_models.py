@@ -29,7 +29,7 @@ ___  ___          _      _
 | |  | | (_) | (_| |  __/ \__ \
 \_|  |_/\___/ \__,_|\___|_|___/
                                
-                               
+MVP model tests --- it's not extensive                               
 
 """
 class TestCourse(TestCase):
@@ -96,7 +96,6 @@ class TestUserProfile(TestCase):
         assert obj.mobile
         assert obj.address
         assert obj.userpicture
-        assert obj.status
         # ...
 
     def test_relation_has_a_user(self):

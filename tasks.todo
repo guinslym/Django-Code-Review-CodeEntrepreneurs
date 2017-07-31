@@ -1,19 +1,28 @@
 Steps:
  ☐ Frontend
    ☐ Dashboard
-      ☐ Create Course
-      ☐ View My Votes
-      ☐ Add money into account
-      ☐ Friends
-      ☐ Navbar Money Amount
-   ☐ Course that a user gives
+      ✔ Create Course @done (17-07-31 04:55)
+      ✔ View My Votes @done (17-07-31 03:32)
+      ✔ Add money into account (button) @done (17-07-31 05:17)
+      ✔ Friends (table for a profile) -- add seed @done (17-07-31 06:01)
+      ✔ Navbar Money Amount -- in profile @done (17-07-31 03:33)
+   ☐ Check StaticFile
+   ✔ Course that a user gives @done (17-07-31 06:02)
+   ✔ delete log @done (17-07-31 05:44)
    ☐ Go and watch this course (payment check and if registered --- Create a Mixin).
-   ☐ On the profile (Protected) page create a table with __sections__ for Friendship (rejected_requests + sent_requests + unread_requests)
+   ✔ Login add template (MVP) @done (17-07-31 06:03)
+   ✔ Try CreateCourse again @done (17-07-31 04:55)
+   ☐ Add a Crispyform form only for one model CreateCourse
+   ✔ On the profile (Protected) page create a table with __sections__ for Friendship (rejected_requests + sent_requests + unread_requests) -- postpone @done (17-07-31 06:03)
    ☐ Add flash message into the app so that I don't need to create another page
  ☐ Superuser admin@gmail.com famille
- ☐ Django permission
+ ✔ Django permission @done (17-07-31 06:03)
  ☐ add license
+ ☐ API friend in the same neighboorhood 
  ☐ clean the app (Maybe download Atom editor)
+ ☐ Finish this app today
+ ☐ Do only one test views..
+ ☐ Add ReadMe.md
  ☐ When finished review my goals and check other apps
 
 Helper:

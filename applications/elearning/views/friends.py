@@ -11,8 +11,19 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views import View
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.http import HttpResponse
-from django.conf import settings
 from django.http import HttpResponseRedirect
+from django.conf import settings
+from django.views import generic
+#https://docs.djangoproject.com/fr/1.11/ref/class-based-views/
+from django.views import View
+from django.views.generic.base import TemplateView
+from django.views.generic.base import RedirectView
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
+from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
 
 #Protection
 from braces.views import LoginRequiredMixin
@@ -44,15 +55,3 @@ from applications.elearning.forms import CourseForm
 
 #http://localhost:8001/
 
-class VoteUpOrDownView(LoginRequiredMixin, View):
-
-    def post(self, request, *args, **kwargs):
-        course = get_object_or_404(Course, slug=kwargs['slug'] )
-        user_id = request.user.id
-        #import ipdb; ipdb.set_trace()
-        if course in Course.votes.all(user_id):
-            course.votes.delete(user_id)
-            return redirect(reverse('elearning:course_detail',kwargs={'slug':kwargs['slug']}))
-        else:
-            course.votes.up(user_id)
-            return redirect(reverse('elearning:course_detail',kwargs={'slug':kwargs['slug']}))

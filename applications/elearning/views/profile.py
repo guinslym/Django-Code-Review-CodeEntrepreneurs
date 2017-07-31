@@ -49,8 +49,7 @@ from django.views.decorators.cache import cache_page
 import logging
 logger = logging.getLogger(__name__)
 #models
-from applications.elearning.models import UserProfile
-from applications.elearning.models import UserProfile
+from applications.elearning.models import UserProfile, Course
 from django.contrib.auth.models import User
 
 from applications.elearning.forms import UserProfileForm
@@ -75,6 +74,9 @@ class UserProfileDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(UserProfileDetailView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
+        #import ipdb; ipdb.set_trace()
+        courses = Course.objects.filter(author=self.get_object().user)
+        context['courses'] = courses
         return context
 
 product_detail = UserProfileDetailView.as_view()

@@ -78,8 +78,50 @@
     </div>
 
     
-
 </div>
+ </div>
+
+<style>
+  table.courses{
+    border: 0px;
+  }
+
+.courses>thead>tr>th, .courses>tbody>tr>th, .courses>tfoot>tr>th, .courses>thead>tr>td, .courses>tbody>tr>td, .courses>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.846;
+    vertical-align: top;
+    border-top: 0px solid #dddddd;
+}
+</style>
+
+ <div class="container">
+   <div class="row">
+       
+       <table class="table text-center courses table-striped">
+       <thead>
+         <tr>
+           <td>
+            <strong>
+           Courses offered by this user
+            </strong>
+           </td>
+         </tr>
+       </thead>
+       <tbody>
+       {% for course in courses %}
+         <tr>
+           <td>
+            <a href="{% url 'course_detail' course.id %}">
+              
+           {{ course.title}}
+
+            </a>
+           </td>
+         </tr>
+         {% endfor %}
+        </tbody>
+       </table>
+   </div>
  </div>
 
 
