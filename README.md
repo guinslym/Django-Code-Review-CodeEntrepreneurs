@@ -62,7 +62,7 @@ C:.
 +---TODO-wireframe-ERD
 +---utils
 ```
-	-	**requirements**: contains my requirements
+	**requirements**: contains my requirements
 
 
 ### User password
