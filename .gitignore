@@ -24,8 +24,6 @@ cache/
 
 #*.sqlite3
 secret_key.txt
-settings/production.py
-settings/*
 staticfiles/
 envpython3/
 htmlcov/
@@ -33,10 +31,6 @@ description.todo
 python3env
 hello*.json
 *journa*
-cstmc-CSV-en.csv
-utils/cstmc-CSV-en.csv
-utils/artefacts.json
-artefacts.json
 
 .coverage*
 
