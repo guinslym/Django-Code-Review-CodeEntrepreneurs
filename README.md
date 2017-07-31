@@ -97,3 +97,8 @@ This command seems to work better if I am not in a virtual env
 ```
 python manage.py shell_plus
 ```
+
+
+##Bugs
+- Unique slug doesn't seems to work on a new created course?
+

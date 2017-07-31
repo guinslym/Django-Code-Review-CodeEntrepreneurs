@@ -5,6 +5,9 @@ from .models import UserProfile
 """
 TODO: this doen't work 
 purpose : create a profile when the user just SignUp
+
+
+All my signals doens't seems to work include the one in the Models.py
 """
 def create_profile(sender, **kwargs):
 	""" Create a profile on post_save signal of User object. """
