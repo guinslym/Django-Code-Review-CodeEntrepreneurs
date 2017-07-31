@@ -88,5 +88,12 @@ password:okyoutube
 username:mycodereview
 password:okyoutube
 ```
-Inline-style: 
+Screen Capture: 
 ![Screen Capture](https://github.com/guinslym/Django-Code-Review-CodeEntrepreneurs/blob/master/TODO-wireframe-ERD/screen-capture/screen1.png "Logo Title Text 1")
+
+
+Note:
+This command seems to work better if I am not in a virtual env
+```
+python manage.py shell_plus
+```
