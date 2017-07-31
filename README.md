@@ -95,10 +95,10 @@ Screen Capture:
 Note:
 This command seems to work better if I am not in a virtual env
 ```
-python manage.py shell_plus
+python manage.py shell_plus #use `shell` in case this doesn't work
 ```
 
 
 ##Bugs
-- Unique slug doesn't seems to work on a new created course?
+- Unique slug doesn't seems to work on a new created course? The Signal is not working
 
