@@ -37,8 +37,7 @@ cstmc-CSV-en.csv
 utils/cstmc-CSV-en.csv
 utils/artefacts.json
 artefacts.json
-media\*
-media/
+
 .coverage*
 
 mockup/*

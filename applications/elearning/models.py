@@ -45,8 +45,7 @@ class Course(TimeStampedModel, VoteModel, models.Model):
                             max_digits=16, decimal_places=2, default=5)
     number_of_minutes   = models.PositiveIntegerField(
                             validators=[
-                            MinValueValidator(12),
-                            MaxValueValidator(60)
+                            MinValueValidator(12)
                             ]
         )
 

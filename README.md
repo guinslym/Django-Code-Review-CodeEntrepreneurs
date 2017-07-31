@@ -8,7 +8,8 @@ or
 pip install -r requirements/development.txt
 
 
+Create a form:
 
 password:
-admin
+codereview
 okyoutube

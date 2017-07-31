@@ -3,98 +3,98 @@
 {% load staticfiles %}
 
 
-  {% block content %}
+{% block content %}
 
- <div class="container">
+<div class="container">
  <div class="row text-center">
    
   <h1>My Profile</h1>
- </div>
-   
+</div>
+
 <div class="row">
-    <div class="col-lg-6 col-lg-offset-2">
-        <div class="media">
-            <a class="pull-left" href="#">
-                <img class="media-object dp img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/guinslym/128.jpg" style="width: 100px;height:100px;">
-            </a>
-            <div class="media-body">
-                <h4 class="media-heading">{{ object.fullname}} <small> Haiti</small></h4>
-                <h5>{{object.bio}} <a href="https://www.linkedin.com/in/guinsly-mondesir/" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></h5>
-                <hr style="margin:8px auto">
+  <div class="col-lg-6 col-lg-offset-2">
+    <div class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object dp img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/guinslym/128.jpg" style="width: 100px;height:100px;">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">{{ object.fullname}} <small> Haiti</small></h4>
+        <h5>{{object.bio}} <a href="https://www.linkedin.com/in/guinsly-mondesir/" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></h5>
+        <hr style="margin:8px auto">
 
-                <span class="label label-default">{{object.address}}</span>
-                <span class="label label-default">{{object.mobile}}</span>
-            </div>
+        <span class="label label-default">{{object.address}}</span>
+        <span class="label label-default">{{object.mobile}}</span>
+      </div>
 
-{% if request.user == object.author  %}
+      {% if request.user == object.author  %}
 
-                  <table class="table">
+      <table class="table">
         <tr>
           <td>
-                <form class="right" method="POST" action="{% url 'userprofile_delete' object.id %}">
-         {% csrf_token %}<input class="btn btn-danger red darken-2" type="submit" value="DELETE">
-      </form>  
-          </td>
-          <td>
-             <a class="btn btn-primary right" href="{% url 'userprofile_update' object.id %}">Update</a>
-          </td>
-        </tr>
-      </table>
+            <form class="right" method="POST" action="{% url 'userprofile_delete' object.id %}">
+             {% csrf_token %}<input class="btn btn-danger red darken-2" type="submit" value="DELETE">
+           </form>  
+         </td>
+         <td>
+           <a class="btn btn-primary right" href="{% url 'userprofile_update' object.id %}">Update</a>
+         </td>
+       </tr>
+     </table>
 
-{% endif %}
+     {% endif %}
 
 
 
-        </div>
+   </div>
 
-    </div>
-
-    
-</div>
  </div>
+
+ 
+</div>
+</div>
 
 <style>
   table.courses{
     border: 0px;
   }
 
-.courses>thead>tr>th, .courses>tbody>tr>th, .courses>tfoot>tr>th, .courses>thead>tr>td, .courses>tbody>tr>td, .courses>tfoot>tr>td {
+  .courses>thead>tr>th, .courses>tbody>tr>th, .courses>tfoot>tr>th, .courses>thead>tr>td, .courses>tbody>tr>td, .courses>tfoot>tr>td {
     padding: 8px;
     line-height: 1.846;
     vertical-align: top;
     border-top: 0px solid #dddddd;
-}
+  }
 </style>
 
- <div class="container">
-   <div class="row">
-       
-       <table class="table text-center courses table-striped">
-       <thead>
-         <tr>
-           <td>
-            <strong>
+<div class="container">
+ <div class="row">
+   
+   <table class="table text-center courses table-striped">
+     <thead>
+       <tr>
+         <td>
+          <strong>
            Courses offered by this user
-            </strong>
-           </td>
-         </tr>
-       </thead>
-       <tbody>
-       {% for course in courses %}
-         <tr>
-           <td>
-            <a href="{% url 'course_detail' course.id %}">
-              
-           {{ course.title}}
+         </strong>
+       </td>
+     </tr>
+   </thead>
+   <tbody>
+     {% for course in courses %}
+     <tr>
+       <td>
+        <a href="{% url 'course_detail' course.id %}">
+          
+         {{ course.title}}
 
-            </a>
-           </td>
-         </tr>
-         {% endfor %}
-        </tbody>
-       </table>
-   </div>
- </div>
+       </a>
+     </td>
+   </tr>
+   {% endfor %}
+ </tbody>
+</table>
+</div>
+</div>
 
 
 {% endblock %}

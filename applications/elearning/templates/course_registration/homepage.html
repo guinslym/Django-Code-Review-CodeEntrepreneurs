@@ -1,32 +1,32 @@
 {% extends "elearning/base.html" %}
 {% load humanize %}
 
-  {% block content %}
-  <div class="container">
-  	<div class="row">
-<p>&nbsp;</p>
-<h1>List of user registered to a course</h1>
-<table class="table table-bordered table-stripped">
-  <thead>
-    <tr>
-      <td>Student</td>
-      <td>Course</td>
-      <td>Created at</td>
-      <td>Is Registered</td>
-    </tr>
-  </thead>
-  <tbody>
-   {% for registration in object_list%}
-    <tr>
+{% block content %}
+<div class="container">
+ <div class="row">
+  <p>&nbsp;</p>
+  <h1>List of user registered to a course</h1>
+  <table class="table table-bordered table-stripped">
+    <thead>
+      <tr>
+        <td>Student</td>
+        <td>Course</td>
+        <td>Created at</td>
+        <td>Is Registered</td>
+      </tr>
+    </thead>
+    <tbody>
+     {% for registration in object_list%}
+     <tr>
       <td>{{ registration.student.username}}</td>
       <td>{{ registration.course.title}}</td>
       <td>{{ registration.created }}</td>
       <td>&nbsp;</td>
     </tr>
-   {% endfor %}
+    {% endfor %}
   </tbody>
 </table>
-  	</div>
-  </div>
+</div>
+</div>
 
 {% endblock %}

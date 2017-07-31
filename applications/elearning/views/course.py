@@ -73,6 +73,7 @@ class CourseListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super(CourseListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now()
+        context['video'] = 'flower.mp4'
         return context
 
 #http://localhost:8001/
@@ -140,7 +141,6 @@ product_new = login_required(CourseCreateView.as_view())
 
 class  CourseDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Course
-    success_message = "Session %(name)s was removed successfully"
     success_url = reverse_lazy('elearning:courses_home')
     
     def delete(self, *args, **kwargs):
@@ -149,7 +149,7 @@ class  CourseDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
             # Return the appropriate response
             success_url = self.get_success_url()
             self.object.delete()
-            messages.success(self.request, self.success_message % obj.__dict__)
+            #messages.success(self.request, self.success_message % obj.__dict__)
             return HttpResponseRedirect(success_url)
         else:
             return HttpResponse('not the owner')

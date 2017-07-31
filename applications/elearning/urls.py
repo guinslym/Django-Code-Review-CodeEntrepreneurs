@@ -8,7 +8,7 @@ from applications.elearning.views import course as views
 from applications.elearning.views import profile as userprofile
 from applications.elearning.views import register as register
 from applications.elearning.views import vote 
-from applications.elearning.views import views_general as gviews
+from applications.elearning.views import general as gviews
 __author__ = 'Guinsly'
 
 
@@ -19,7 +19,6 @@ urlpatterns = [
    url(r'^course_detail/(?P<slug>[-\w]{1,255})/$', views.CourseDetailView.as_view(), name='course_detail'),
    url(r'^course_delete/(?P<pk>\d+)/$', views.CourseDeleteView.as_view(), name='course_delete'),
    url(r'^$', views.CourseListView.as_view(), name='courses_home'),
-   url(r'^$', views.CourseListView.as_view(), name='index'),
 
    #Register
    url(r'^register_list/$', register.RegisterListView.as_view(), name='register_list'),

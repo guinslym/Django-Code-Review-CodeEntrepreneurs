@@ -1,7 +1,7 @@
 {% extends "elearning/base.html" %}
 {% load humanize %}
 
-  {% block content %}
+{% block content %}
 
 
 <div class="dashboard">
@@ -10,21 +10,21 @@
   <div class="container">
   	<div class="row">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-<h1 class="demo-title">Welcome to your dashboard</h1>
+      <h1 class="demo-title">Welcome to your dashboard</h1>
 
-<div class="pricing-table">
-  <a href="{% url 'course_create' %}">
-    <div class="pricing-option">
-        <i class="material-icons">airplay</i>
-        <h1>Create course</h1>
-        <hr />
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
-        <hr />
-    </div>
-  </a>
-    
+      <div class="pricing-table">
+        <a href="{% url 'course_create' %}">
+          <div class="pricing-option">
+            <i class="material-icons">airplay</i>
+            <h1>Create course</h1>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+            <hr />
+          </div>
+        </a>
+        
     <!--
   <a href="{#% url 'friend_requests' %#}">
     <div class="pricing-option">
@@ -35,30 +35,30 @@
         <hr />
     </div>
   </a>
-  -->
-    
-    <div class="pricing-option">
+-->
+
+<div class="pricing-option">
   <a href="{% url 'add_money' %}" class="money_balance">
-        <i class="material-icons">art_track</i>
-        <h1>Add Money</h1>
-        <hr />
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
-        <hr />
-        <div class="price">
-            <div class="front">
-                <span class="price">{{balance}} <b>$</b></span>
-            </div>
-            <div class="back">
-              <form class="right vote" method="POST" action="{% url 'add_money' %}">{% csrf_token %}
-                  <a href="#" onclick="this.parentNode.submit()" class="button">Add money</a>
-              </form>
-            </div>
-        </div>
-  </a>
+    <i class="material-icons">art_track</i>
+    <h1>Add Money</h1>
+    <hr />
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>
+    <hr />
+    <div class="price">
+      <div class="front">
+        <span class="price">{{balance}} <b>$</b></span>
+      </div>
+      <div class="back">
+        <form class="right vote" method="POST" action="{% url 'add_money' %}">{% csrf_token %}
+          <a href="#" onclick="this.parentNode.submit()" class="button">Add money</a>
+        </form>
+      </div>
     </div>
+  </a>
 </div>
-      
-  	</div>
-  </div>
+</div>
+
+</div>
+</div>
 </div>
 {% endblock %}

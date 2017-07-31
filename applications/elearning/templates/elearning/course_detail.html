@@ -4,8 +4,7 @@
 {% load registration %}
 {% load hitcount_tags %}
 
-  {% block content %}
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+{% block content %}
 
 
 <div class="jumbotron">
@@ -13,129 +12,129 @@
 </div>
 <div class="container">
 
-<div class="row">
+  <div class="row">
 
-      <div class="col-md-4">
-        <div class="column"> 
-          
-          <!-- Post-->
-          <div class="post-module"> 
-            <!-- Thumbnail-->
-            <div class="thumbnail">
+    <div class="col-md-4">
+      <div class="column"> 
+        
+        <!-- Post-->
+        <div class="post-module"> 
+          <!-- Thumbnail-->
+          <div class="thumbnail">
 
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
             <!-- Post Content-->
             <div class="post-content">
             <!--
               <div class="category">Catagories</div>
-              -->
-              <h1 class="title">
-                <a href="">
-                  {{ object.title }}
-                </a>
-              </h1>
-              <h2 class="sub_title">by 
-              <a href="{% url 'elearning:userprofile_detail' course.author.profile.slug %}">
-                              {{ course.author.profile.fullname }}
+            -->
+            <h1 class="title">
+              <a href="">
+                {{ object.title }}
               </a>
-              </h2>
-              <span class="price">$ {{ object.price }}</span>
-              <span class="minutes">{{ object.number_of_minutes }}</span>
+            </h1>
+            <h2 class="sub_title">by 
+              <a href="{% url 'elearning:userprofile_detail' course.author.profile.slug %}">
+                {{ course.author.profile.fullname }}
+              </a>
+            </h2>
+            <span class="price">$ {{ object.price }}</span>
+            <span class="minutes">{{ object.number_of_minutes }}</span>
 
-              <div class="post-meta">
+            <div class="post-meta">
               <!--
                 <span class="comments">
                   <i class="fa fa-comments"></i>
                   <a href="#"> 39 comments</a>
                 </span>
               -->
-                <span class="comments" style="padding-left:10px">
+              <span class="comments" style="padding-left:10px">
                 
                 <form class="right vote" method="POST" action="{% url 'voteUpOrDown' object.slug %}">
-                <span class="timestamp">
-                  <i class="fa fa-clock-o"></i> {{ object.created|naturaltime }}
-                </span>
-                {% csrf_token %}
-                <input type="hidden" name="vote" value="val" />
-                <a href="#" onclick="this.parentNode.submit()">
-                  
-                  <i class="fa fa-2x {% has_voted object.slug request.user %}"></i>
+                  <span class="timestamp">
+                    <i class="fa fa-clock-o"></i> {{ object.created|naturaltime }}
+                  </span>
+                  {% csrf_token %}
+                  <input type="hidden" name="vote" value="val" />
+                  <a href="#" onclick="this.parentNode.submit()">
+                    
+                    <i class="fa fa-2x {% has_voted object.slug request.user %}"></i>
                    <!--
                    {% total_vote object.slug %}
-                   -->
-                </a>
-                </form>
+                 -->
+               </a>
+             </form>
 
-                </span>
-
-
-{% if request.user == object.author  %}
+           </span>
 
 
-      <table class="table">
-        <tr>
-          <td>
+           {% if request.user == object.author  %}
+
+
+           <table class="table">
+            <tr>
+              <td>
                 <form class="right" method="POST" action="{% url 'course_delete' object.id %}">
-         {% csrf_token %}<input class="btn btn-danger red darken-2" type="submit" value="DELETE">
-      </form>  
-          </td>
-          <td>
-             <a class="btn btn-primary right" href="{% url 'course_update' object.id %}">Update</a>
-          </td>
-          <td>
-            <a class="btn btn-default right" href="{% url 'course_create' %}">Create</a>
-          </td>
-        </tr>
-      </table>
+                 {% csrf_token %}<input class="btn btn-danger red darken-2" type="submit" value="DELETE">
+               </form>  
+             </td>
+             <td>
+               <a class="btn btn-primary right" href="{% url 'course_update' object.id %}">Update</a>
+             </td>
+             <td>
+              <a class="btn btn-default right" href="{% url 'course_create' %}">Create</a>
+            </td>
+          </tr>
+        </table>
 
 
-{% else %}
+        {% else %}
 
 
-      <table class="table">
-        <tr>
-          <td>
-          <form class="right" method="POST" action="{% url 'register_and_unregister_create' object.slug %}">
-         {% csrf_token %}
-         <input type="hidden" name="course_id" value="{{object.id}}">
-         <input class="btn btn-primary btn-sm red darken-2" type="submit" value="{% is_registered object.slug  request.user %}">
-      </form>  
-          </td>
-        </tr>
-      </table>
+        <table class="table">
+          <tr>
+            <td>
+              <form class="right" method="POST" action="{% url 'register_and_unregister_create' object.slug %}">
+               {% csrf_token %}
+               <input type="hidden" name="course_id" value="{{object.id}}">
+               <input class="btn btn-primary btn-sm red darken-2" type="submit" value="{% is_registered object.slug  request.user %}">
+             </form>  
+           </td>
+         </tr>
+       </table>
 
 
-{% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+       {% endif %}
+     </div>
+   </div>
+ </div>
+</div>
+</div>
 
-      <div class="col-lg-8">
-          <h1>Description</h1>
-          <p>{{object.shortdesc}}</p>
-          <span><strong>Total Number of votes</strong>: 
-                   {% total_vote object.slug %}
-                   </span>
-                   <br>
-          <span><strong>Total Number of user that have clicked on this course page:</strong>
-                   {% get_hit_count for object %}
-                   </span>
-                   <br>
-          
+<div class="col-lg-8">
+  <h1>Description</h1>
+  <p>{{object.shortdesc}}</p>
+  <span><strong>Total Number of votes</strong>: 
+   {% total_vote object.slug %}
+ </span>
+ <br>
+ <span><strong>Total Number of user that have clicked on this course page:</strong>
+   {% get_hit_count for object %}
+ </span>
+ <br>
+ 
 
-                    <form class="right" method="POST" action="{% url 'elearning:show_video' object.slug %}">
-                     {% csrf_token %}
-                     <input class="btn btn-primary btn-sm red darken-2" type="submit" value="Go and watch this course">
-                  </form> 
+ <form class="right" method="POST" action="{% url 'elearning:show_video' object.slug %}">
+   {% csrf_token %}
+   <input class="btn btn-primary btn-sm red darken-2" type="submit" value="Go and watch this course">
+ </form> 
 
-          </a>
-      </div>
+</a>
+</div>
 
 
 
-    </div>
+</div>
 
 </div>
 

@@ -8,7 +8,7 @@ from django.views.decorators.cache import cache_page
 from django.conf.urls import url, include, handler404, handler500
 admin.autodiscover()
 
-from applications.elearning.views.views_general import robot_files
+from applications.elearning.views.general import robot_files
 
 urlpatterns = [
 	#Robot and Humans.txt

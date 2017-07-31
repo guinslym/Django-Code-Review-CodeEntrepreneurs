@@ -52,7 +52,9 @@ class VoteUpOrDownView(LoginRequiredMixin, View):
         #import ipdb; ipdb.set_trace()
         if course in Course.votes.all(user_id):
             course.votes.delete(user_id)
+            messages.success(request, 'We deleted your Like')
             return redirect(reverse('elearning:course_detail',kwargs={'slug':kwargs['slug']}))
         else:
             course.votes.up(user_id)
+            messages.success(request, 'Thanks for liking my Course')
             return redirect(reverse('elearning:course_detail',kwargs={'slug':kwargs['slug']}))

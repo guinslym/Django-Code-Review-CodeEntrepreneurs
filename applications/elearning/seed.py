@@ -3,6 +3,8 @@
 
 	COPY-And-PASTE to shell
 	python manage.py shell_plus
+
+	make sure you did pip install the requirements
 """
 
 from applications.elearning.models import Course

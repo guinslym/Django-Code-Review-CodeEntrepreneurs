@@ -3,57 +3,57 @@
 {% load bootstrap_pagination %}
 {% load hitcount_tags %}
 
-  {% block content %}
+{% block content %}
 
 <div class="jumbotron">
   <h1>Code Review</h1>
 </div>
 <div class="container">
-<div class="row text-center">
-  <h1>Courses</h1>
-</div>
+  <div class="row text-center">
+    <h1>Courses</h1>
+  </div>
 
-<div class="row text-center">
+  <div class="row text-center">
    {% bootstrap_paginate page_obj %}
-</div>
+ </div>
 
-<div class="row">
-      {% for course in object_list %}
-      <div class="col-md-4">
-        <div class="column"> 
-          
-          <!-- Post-->
-          <div class="post-module"> 
-            <!-- Thumbnail-->
-            <div class="thumbnail">
+ <div class="row">
+  {% for course in object_list %}
+  <div class="col-md-4">
+    <div class="column"> 
+      
+      <!-- Post-->
+      <div class="post-module"> 
+        <!-- Thumbnail-->
+        <div class="thumbnail">
 
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
-            <!-- Post Content-->
-            <div class="post-content">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg" class="img-responsive" alt=""> </div>
+          <!-- Post Content-->
+          <div class="post-content">
             <!--
               <div class="category">Catagories</div>
-              -->
-              <h1 class="title">
-                <a href="{% url 'elearning:course_detail' course.slug %}">
-                  {{ course.title }}
-                </a>
-              </h1>
-              <h2 class="sub_title">by 
-              <a href="{% url 'elearning:userprofile_detail' course.author.profile.slug %}">
-                              {{ course.author.profile.fullname }}
+            -->
+            <h1 class="title">
+              <a href="{% url 'elearning:course_detail' course.slug %}">
+                {{ course.title }}
               </a>
-              </h2>
-              <span class="price">$ {{ course.price }}</span>
-              <span class="minutes">{{ course.number_of_minutes }}</span>
+            </h1>
+            <h2 class="sub_title">by 
+              <a href="{% url 'elearning:userprofile_detail' course.author.profile.slug %}">
+                {{ course.author.profile.fullname }}
+              </a>
+            </h2>
+            <span class="price">$ {{ course.price }}</span>
+            <span class="minutes">{{ course.number_of_minutes }}</span>
 
-              <div class="post-meta">
-                <span class="timestamp">
-                  <i class="fa fa-clock-o"></i> {{ course.created|naturaltime }} 
-                </span>
-                <span class="comments hitcount">
-                  <i class="fa fa-eye"></i>
-                  <a href="#"> {% get_hit_count for course %}</a>
-                </span>
+            <div class="post-meta">
+              <span class="timestamp">
+                <i class="fa fa-clock-o"></i> {{ course.created|naturaltime }} 
+              </span>
+              <span class="comments hitcount">
+                <i class="fa fa-eye"></i>
+                <a href="#"> {% get_hit_count for course %}</a>
+              </span>
                 <!--
                 <span class="comments">
                   <i class="fa fa-comments"></i>
@@ -67,26 +67,26 @@
                   <i class="fa fa-thumbs-o-down"></i>
                    3
                 </span>
-                -->
-              </div>
+              -->
             </div>
           </div>
         </div>
       </div>
-      {% endfor %}
-
-
     </div>
+    {% endfor %}
 
-<div class="row text-center">
+
+  </div>
+
+  <div class="row text-center">
    {% bootstrap_paginate page_obj %}
-</div>
+ </div>
 
 </div>
 
 
 
-    <script>
+<script>
     /*
       $(window).load(function() {
   $('.post-module').hover(function() {
@@ -97,7 +97,7 @@
   });
 });
 */
-    </script>
+</script>
 
 
-  {% endblock %}
+{% endblock %}
