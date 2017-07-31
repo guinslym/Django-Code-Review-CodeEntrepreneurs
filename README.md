@@ -18,9 +18,6 @@ virtualenv django1_11 --python=/usr/local/bin/python3
 pip install -r requirements/development.txt
 ```
 
-
-Create a form:
-
 ### User password
 ```
 username:codereview
