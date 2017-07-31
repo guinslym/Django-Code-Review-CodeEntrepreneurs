@@ -88,3 +88,5 @@ password:okyoutube
 username:mycodereview
 password:okyoutube
 ```
+Inline-style: 
+![Screen Capture](https://github.com/guinslym/Django-Code-Review-CodeEntrepreneurs/blob/master/TODO-wireframe-ERD/screen-capture/screen1.png "Logo Title Text 1")
