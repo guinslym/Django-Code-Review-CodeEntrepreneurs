@@ -1,6 +1,7 @@
 Steps:
  ☐ Frontend
-   ☐ Dashboard
+ ☐ A user can Register to course that he didn't create (view Wireframe/ERD)
+   ✔ Dashboard @done (17-07-31 07:33)
       ✔ Create Course @done (17-07-31 04:55)
       ✔ View My Votes @done (17-07-31 03:32)
       ✔ Add money into account (button) @done (17-07-31 05:17)
