@@ -4,8 +4,8 @@ Steps:
    ✔ django-hitcount @done (17-07-30 08:12)
    ✔ Check wireframe to see if it's good @done (17-07-30 08:12)
    ✔ 5$ et minutes to customize @done (17-07-30 07:16)
-   ☐ homepage frontend add  like Detailpage (#minutes. timeago. Like button with TemplateTags)
-   ☐ Go and watch this course (payment check and if registered)
+   ☐ homepage frontend add  like Detailpage (#minutes. timeago. Like button with TemplateTags ---)
+   ☐ Go and watch this course (payment check and if registered --- Create a Mixin)
    ☐ Payment
    ☐ Try axios for Ajax button https://github.com/kumareshalfa/edocs-code/blob/710ff2ef9d82b3f74ce102c3792d1dfda6b4b2c5/anabond/views.py#L977 (ajax_url_code_review....)
    ☐ Dashboard - Create a course - View my votes
