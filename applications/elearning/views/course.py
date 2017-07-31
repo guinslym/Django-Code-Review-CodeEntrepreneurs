@@ -76,7 +76,7 @@ class CourseListView(LoginRequiredMixin, ListView):
         context['video'] = 'flower.mp4'
         return context
 
-#http://localhost:8001/
+#http://localhost:8001/slug/
 class CourseDetailView(LoginRequiredMixin, HitCountDetailView, DetailView):
     model = Course
     template_name = 'elearning/course_detail.html'
@@ -90,7 +90,7 @@ class CourseDetailView(LoginRequiredMixin, HitCountDetailView, DetailView):
 
 product_detail = CourseDetailView.as_view()
 
-#http://localhost:8001/
+#not implemented (use roles.)
 class AdminCourseListView(LoginRequiredMixin, ListView):
 
     model = Course
@@ -102,6 +102,7 @@ class AdminCourseListView(LoginRequiredMixin, ListView):
         context['now'] = timezone.now()
         return context
 
+# #update http://localhost:8001/slug
 class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Course
     form_class = CourseForm

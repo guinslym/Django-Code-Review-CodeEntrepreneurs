@@ -1,6 +1,6 @@
 import socket
 
-#My laptop is name 'Guinsly-thinkpad-lenovo'
+#My laptop is named 'Guinsly-thinkpad-lenovo'
 if not 'jebrellish' in socket.gethostname():
     from .development import *
     #print('--dev--settings-- on ' + socket.gethostname()  + " 's computer")
