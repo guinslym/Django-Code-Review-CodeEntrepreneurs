@@ -28,7 +28,7 @@ ALLOWED_HOSTS = ['*']
 
 
 BASE_APPS =  (
-    #Third party app but I need to place it here (above django..)
+    #Third party app but I need to place here (above django..)
     'flat_responsive',
     
     #django based
