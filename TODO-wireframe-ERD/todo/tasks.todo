@@ -1,6 +1,7 @@
 Steps:
  ☐ Frontend
  ☐ A user can Register to course that he didn't create (view Wireframe/ERD)
+ ☐ Debug toolbar Models queries doesn't show
    ✔ Dashboard @done (17-07-31 07:33)
       ✔ Create Course @done (17-07-31 04:55)
       ✔ View My Votes @done (17-07-31 03:32)
