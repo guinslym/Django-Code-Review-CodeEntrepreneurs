@@ -48,7 +48,6 @@ class Course(TimeStampedModel, VoteModel, models.Model):
                             slugify=custom_slugify, 
                             populate_from=lambda instance: instance.author.profile.fullname + " " + instance.title, 
                             unique_with=('created', 'author'),
-                            always_update=True
                             )
     price               = models.DecimalField(
                             max_digits=16, decimal_places=2, default=5)

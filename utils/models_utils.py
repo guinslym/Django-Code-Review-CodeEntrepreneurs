@@ -6,6 +6,14 @@ from autoslug.settings import slugify as default_slugify
 import random
 import string
 
+#python 3.6 cryptographic random
+try:
+    from secrets import choice
+except:
+    from random import choice
+
+
+
 #model_utils.models
 
 class AutoCreatedField(models.DateTimeField):
@@ -42,7 +50,7 @@ class TimeStampedModel(models.Model):
 
 
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
+    return ''.join(choice(chars) for _ in range(size))
 
 def custom_slugify(value):
     #return kira-turner-introduction-to-django-16xgq
