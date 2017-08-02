@@ -45,7 +45,8 @@ def random_string_generator(size=10, chars=string.ascii_lowercase + string.digit
     return ''.join(random.choice(chars) for _ in range(size))
 
 def custom_slugify(value):
+    #return kira-turner-introduction-to-django-16xgq
     return default_slugify(
                 value + " " + random_string_generator(size=5)
-            ).replace('-', '_')
+            )
     #slug = AutoSlugField(slugify=custom_slugify)
