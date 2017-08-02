@@ -31,7 +31,8 @@ description.todo
 python3env
 hello*.json
 *journa*
-
+#download tuto video
+*.mp4
 .coverage*
 
 mockup/*

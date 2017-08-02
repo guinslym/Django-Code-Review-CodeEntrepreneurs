@@ -193,3 +193,7 @@ LOGIN_REDIRECT_URL = "/"
 SHELL_PLUS = "ipython"
 
 LOGOUT_URL='/'
+
+
+# Session settings
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

@@ -8,6 +8,9 @@ SECRET_KEY = 'p-h93iwrvc0+3e%m9)8(b(ml1clqwih^u=7p%p+o$ln$^458kn'
 DEBUG=True
 TEMPLATE_DEBUG_MODE = True
 
+# Django-debug-toolbar settings
+INTERNAL_IPS = ['127.0.0.1', 'localhost',]
+
 DEV_APPS = (
     'django_seed',
     'debug_toolbar',
@@ -28,7 +31,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     #'whitenoise.middleware.WhiteNoiseMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    
+    # Third party middleWare
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'debug_toolbar_force.middleware.ForceDebugToolbarMiddleware',
 
