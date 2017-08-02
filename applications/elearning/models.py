@@ -44,7 +44,8 @@ class Course(TimeStampedModel, VoteModel, models.Model):
                             max_length=15, 
                             help_text='title of the course', 
                             blank=False, verbose_name='title')
-    slug                = AutoSlugField(slugify=custom_slugify, 
+    slug                = AutoSlugField(
+                            slugify=custom_slugify, 
                             populate_from=lambda instance: instance.author.profile.fullname + " " + instance.title, 
                             unique_with=('created', 'author')
                             )
