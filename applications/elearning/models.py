@@ -45,7 +45,7 @@ class Course(TimeStampedModel, VoteModel, models.Model):
                             help_text='title of the course', 
                             blank=False, verbose_name='title')
     slug                = AutoSlugField(slugify=custom_slugify, 
-                            populate_from=lambda instance: instance.author.profile.fullname + "     " + instance.title, 
+                            populate_from=lambda instance: instance.author.profile.fullname + " " + instance.title, 
                             unique_with=('created', 'author')
                             )
     price               = models.DecimalField(
