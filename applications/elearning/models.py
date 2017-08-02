@@ -19,13 +19,17 @@ from django.utils.text import slugify
 from django.db.models.signals import pre_save, post_save
 from django.dispatch import receiver
 
-from utils.models_utils import unique_slug_generator
+from utils.models_utils import custom_slugify
+
+from autoslug import AutoSlugField
+from django.utils.text import slugify
 
 #other package
 from vote.models import VoteModel
 
 from utils.models_utils import TimeStampedModel
 
+# Create your models here.
 class Course(TimeStampedModel, VoteModel, models.Model):
     author              = models.ForeignKey(
         settings.AUTH_USER_MODEL, related_name='teacher')
@@ -40,7 +44,10 @@ class Course(TimeStampedModel, VoteModel, models.Model):
                             max_length=15, 
                             help_text='title of the course', 
                             blank=False, verbose_name='title')
-    slug                = models.SlugField()
+    slug                = AutoSlugField(slugify=custom_slugify, 
+                            populate_from=lambda instance: instance.author.profile.fullname + "     " + instance.title, 
+                            unique_with=('created', 'author')
+                            )
     price               = models.DecimalField(
                             max_digits=16, decimal_places=2, default=5)
     number_of_minutes   = models.PositiveIntegerField(
