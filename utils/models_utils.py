@@ -3,11 +3,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.timezone import now
 from django.utils.text import slugify
 from autoslug.settings import slugify as default_slugify
-import random
 import string
 
-#python 3.6 cryptographic random
 try:
+    #python 3.6 cryptographic random
     from secrets import choice
 except:
     from random import choice

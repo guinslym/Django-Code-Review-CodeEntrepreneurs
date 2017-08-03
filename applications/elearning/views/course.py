@@ -119,11 +119,9 @@ class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         return super(self.__class__, self).form_valid(form)
 
     def get_success_url(self):
-            if 'slug' in self.kwargs:
-                slug = self.kwargs['slug']
-            else:
-                slug = 'demo'
-            return reverse('elearning:course_detail', kwargs={'slug': slug})
+        self.object = self.get_object()
+        return reverse('elearning:course_detail', kwargs={'slug': self.object.slug})
+
 
 product_update = login_required(CourseUpdateView.as_view())
 
